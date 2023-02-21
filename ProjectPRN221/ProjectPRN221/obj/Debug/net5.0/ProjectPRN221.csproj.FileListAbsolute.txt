@@ -74,5 +74,12 @@ E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\o
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.pdb
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.genruntimeconfig.cache
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ref\ProjectPRN221.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\PagedList.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\PagedList.Mvc.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Product.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.Mvc.Common.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.MvcApplicationPartsAssemblyInfo.cs

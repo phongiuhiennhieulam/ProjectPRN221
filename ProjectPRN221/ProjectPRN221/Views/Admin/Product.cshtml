@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Mvc.Common
+@using X.PagedList;
+<section class="content">
+
+<!-- Main row -->
+<div class="row">
+    <div class="col-md-12">
+        <section class="panel">
+            <header class="panel-heading">
+                List Product
+            </header>
+            @*@using (Html.BeginForm("Index", "ProductAdmin", FormMethod.Get))
+            {*@
+                <div class="input-group">
+                    <input type="text" name="search" value="@ViewBag.search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                    <input type="submit" class="btn btn-primary" value="Search" />
+                </div>
+            @*}*@
+            <div class="panel-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Color</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            @if (User.IsInRole("Marketing"))
+                            {
+                                <th></th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.lstProduct)
+                        {
+                            <tr>
+                                <td>@item.ProductId</td>
+                                <td><img class="media-object" src="~/images/product-details/product/@item.ProductImage" /></td>
+                                <td style="padding-top:40px">@item.ProductName</td>
+                                @foreach (var j in ViewBag.lstColor)
+                                {
+                                        if (item.ColorId == j.ColorId)
+                                    {
+                                        <td>@j.ColorName</td>
+                                    }
+                                }
+                                <td>@item.ProductPrice$</td>
+                                @foreach (var k in ViewBag.lstStatusProduct)
+                                {
+                                        if (item.StatusProductId == k.StatusProductId)
+                                    {
+                                            <td>@k.StatusProductStatus</td>
+                                    }
+                                }
+                                <td>
+                                    <div class="pull-right hidden-phone">
+                                        <a href="/ProductAdmin/Edit?Id=@item.ProductId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                        <a href="/ProductAdmin/Delete?Id=@item.ProductId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                    </div>
+                                </td>
+                                
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            @Html.PagedListPager((IPagedList)ViewBag.lstProduct, page => Url.Action("Product", new { page }))
+            
+        </section>
+        <div class=" add-task-row">
+            <a class="btn btn-success btn-sm pull-left" href="/AddProduct/Index">Add New Product</a>
+        </div>
+    </div><!--end col-6 -->
+</div>
+<!-- row end -->
+            </section><!-- /.content -->
+<div class="footer-main">
+    Copyright &copy Director, 2022
+</div>
+                
