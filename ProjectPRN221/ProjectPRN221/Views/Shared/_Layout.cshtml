@@ -304,17 +304,20 @@
                     @if (ViewBag.cate == "Dashboard")
                     {
                         <li class="active">
-                            <a href="index.html">
+                            <a href="~/Home/Index">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            </a>
+                        </li>
+                    } else
+                    {
+                        <li>
+                            <a href="~/Home/Index">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
                     }
 
-                    <li>
-                        <a href="index.html">
-                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                        </a>
-                    </li>
+                    
                     
                     @if (ViewBag.cate == "Products")
                     {
@@ -323,30 +326,32 @@
                                 <i class="fa fa-gavel"></i> <span>Products</span>
                             </a>
                         </li>
+                    } else
+                    {
+                        <li>
+                            <a href="~/Admin/Product">
+                                <i class="fa fa-gavel"></i> <span>Products</span>
+                            </a>
+                        </li>
                     }
-
-                    <li>
-                        <a href="~/Admin/Product">
-                            <i class="fa fa-gavel"></i> <span>Products</span>
-                        </a>
-                    </li>
-
+                    
                     @if (ViewBag.cate == "Blogs")
                     {
                         <li class="active">
-                            <a href="basic_form.html">
+                            <a href="~/Admin/Blog">
+                                <i class="fa fa-globe"></i> <span>Blogs</span>
+                            </a>
+                        </li>
+                    } else
+                    {
+                        <li>
+                            <a href="~/Admin/Blog">
                                 <i class="fa fa-globe"></i> <span>Blogs</span>
                             </a>
                         </li>
                     }
 
-                    <li>
-                        <a href="basic_form.html">
-                            <i class="fa fa-globe"></i> <span>Blogs</span>
-                        </a>
-                    </li>
-
-
+                    
                     <li>
                         <a href="simple.html">
                             <i class="fa fa-glass"></i> <span>Slides</span>

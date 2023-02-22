@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Mvc.Common
+@using X.PagedList;
+<!-- Main content -->
+<section class="content">
+
+    <!-- Main row -->
+    <div class="row">
+        <div class="col-md-12">
+            <section class="panel tasks-widget">
+                <header class="panel-heading">
+                    Blog list
+                </header>
+                @using (Html.BeginForm("Blog", "Admin", FormMethod.Get))
+                {
+                    <div class="input-group">
+                        <input type="text" name="search" value="@ViewBag.search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <input type="submit" class="btn btn-primary" value="Search" />
+                    </div>
+                }
+                <div class="panel-body">
+
+                    <div class="task-content">
+
+                        <ul class="task-list">
+                            @foreach (var blog in ViewBag.lstBlog)
+                            {
+                                <li>
+                                    <div class="task-title">
+                                        <span class="task-title-sp">@blog.BlogTitle</span>
+                                        <span class="label label-success">@blog.BlogCreatedate</span>
+                                        <div class="pull-right hidden-phone">
+                                           
+                                                @*<a href="#"><button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button></a>*@
+                                            <a href="/EditBlogAdmin/Index?Id=@blog.BlogId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                            <a href="/EditBlogAdmin/Delete?Id=@blog.BlogId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                            @Html.PagedListPager((IPagedList)ViewBag.lstBlog, page => Url.Action("Blog", new { page }))
+                        </ul>
+                    </div>
+                    @if (User.IsInRole("Marketing"))
+                    {
+                        <div class=" add-task-row">
+                            <a class="btn btn-success btn-sm pull-left" href="/AddBlogAdmin/Index">Add New Blog</a>
+                        </div>
+                    }
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- row end -->
+</section><!-- /.content -->
+<div class="footer-main">
+    Copyright &copy Director, 2022
+</div>
+

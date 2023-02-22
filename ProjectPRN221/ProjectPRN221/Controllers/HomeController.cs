@@ -20,6 +20,7 @@ namespace ProjectPRN221.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.cate = "Dashboard";
             return View();
         }
     }

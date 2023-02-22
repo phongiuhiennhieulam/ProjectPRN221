@@ -1,0 +1,100 @@
+﻿@model ProjectPRN221.Models.Product
+
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Main content -->
+<section class="content">
+
+    <!-- Main row -->
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel tasks-widget">
+                <header class="panel-heading">
+                    Add Product
+                </header>
+                @*@if (ViewBag.error != null)
+                {
+                    <div class="alert alert-block alert-danger">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>Oh snap!</strong> You have some problems.
+                    </div>
+                }*@
+                @*@using (Html.BeginForm("AddProduct", "Admin", FormMethod.Post))
+                {*@
+                    @Html.AntiForgeryToken()
+                    <div class="panel-body">
+                        <form role="form" asp-controller="Admin" asp-action="AddProduct" asp-area="Post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="ProductName" class="control-label"></label>
+                                <input asp-for="ProductName" class="form-control" />
+                                <span asp-validation-for="ProductName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ProductPrice" class="control-label"></label>
+                                <input asp-for="ProductPrice" class="form-control" />
+                                <span asp-validation-for="ProductPrice" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ProductDescription" class="control-label"></label>
+                                <input asp-for="ProductDescription" class="form-control" />
+                                <span asp-validation-for="ProductDescription" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ColorId" class="control-label"></label>
+                                <select asp-for="ColorId" class="form-control" asp-items="ViewBag.ColorId"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ProductQuantity" class="control-label"></label>
+                                <input asp-for="ProductQuantity" class="form-control" />
+                                <span asp-validation-for="ProductQuantity" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ProductImage" class="control-label"></label>
+                                <input asp-for="ProductImage" class="form-control" />
+                                <span asp-validation-for="ProductImage" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Category" class="control-label"></label>
+                                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="StatusProductId" class="control-label"></label>
+                                <select asp-for="StatusProductId" class="form-control" asp-items="ViewBag.StatusProductId"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ProductCode" class="control-label"></label>
+                                <input asp-for="ProductCode" class="form-control" />
+                                <span asp-validation-for="ProductCode" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ProductCreateDate" class="control-label"></label>
+                                <input asp-for="ProductCreateDate" class="form-control" />
+                                <span asp-validation-for="ProductCreateDate" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ProductBacklink" class="control-label"></label>
+                                <input asp-for="ProductBacklink" class="form-control" />
+                                <span asp-validation-for="ProductBacklink" class="text-danger"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-info">Add Product</button>
+
+                        </form>
+
+                    </div>
+                @*}*@
+            </section>
+        </div>
+    </div>
+    <!-- row end -->
+</section><!-- /.content -->
+<div class="footer-main">
+    Copyright &copy Director, 2023
+</div>
+
+
