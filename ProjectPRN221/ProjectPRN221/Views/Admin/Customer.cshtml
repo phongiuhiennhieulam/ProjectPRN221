@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "Customer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Mvc.Common
+@using X.PagedList;
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Main row -->
+    <div class="row">
+
+        <div class="col-md-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    List Customer
+                </header>
+                @using (Html.BeginForm("Customer", "Admin", FormMethod.Get))
+                {
+                    <div class="input-group">
+                        <input type="text" name="search" value="@ViewBag.search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <input type="submit" class="btn btn-primary" value="Search" />
+                    </div>
+                }
+                <div class="panel-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>FullName</th>
+                                <th>Gender</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.lstCustomer)
+                            {
+                                <tr>
+                                    <td>@item.AccountId</td>
+                                    <td>@item.AccountName</td>
+                                    @if (item.AccountGender == true)
+                                    {
+                                        <td>Male</td>
+                                    }
+                                    @if (item.AccountGender == false)
+                                    {
+                                        <td>Female</td>
+                                    }
+                                    <td>@item.AccountAddress</td>
+                                    <td>@item.AccountEmail</td>
+                                    <td>@item.AccountPhone</td>
+                                    <td>@item.AccountStatus</td>
+                                    
+                                        <td>
+                                            <div class="pull-right hidden-phone">
+                                            <a href="/Admin/UnLockAccount?Id=@item.AccountId"><button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button></a>
+                                            <a href="/Admin/LockAccount?Id=@item.AccountId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                            </div>
+                                        </td>
+                                    
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    @Html.PagedListPager((IPagedList)ViewBag.lstCustomer, page => Url.Action("Customer", new { page }))
+                </div>
+            </section>
+            <div class=" add-task-row">
+                <a class="btn btn-success btn-sm pull-left" href="/Admin/AddCustomer">Add New Customer</a>
+            </div>
+        </div><!--end col-6 -->
+    </div>
+    <!-- row end -->
+</section><!-- /.content -->
+<div class="footer-main">
+    Copyright &copy Director, 2022
+</div>
+

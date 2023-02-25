@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "Slide";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Mvc.Common
+@using X.PagedList;
+<!-- Main content -->
+<section class="content">
+
+    <!-- Main row -->
+    <div class="row">
+        <div class="col-md-12">
+            <section class="panel tasks-widget">
+                <header class="panel-heading">
+                    Slide active list
+                </header>
+                <div class="panel-body">
+
+                    <div class="task-content">
+
+                        <ul class="task-list">
+                            @foreach (var slide in ViewBag.lstSlideAc)
+                            {
+                                <li>
+                                    <div class="task-title">
+                                        <span class="task-title-sp">@slide.SlideTitle</span>
+                                        <span class="label label-success">@slide.SlideCreatedate</span>
+                                        <div class="pull-right hidden-phone">
+                                            <a href="~/Admin/DeleteActive?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                            @Html.PagedListPager((IPagedList)ViewBag.lstSlideAc, page => Url.Action("Slide", new { page }))
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="panel tasks-widget">
+                <header class="panel-heading">
+                    Slide list
+                </header>
+                @using (Html.BeginForm("Slide", "Admin", FormMethod.Get))
+                {
+                    <div class="input-group">
+                        <input type="text" name="search" value="@ViewBag.search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <input type="submit" class="btn btn-primary" value="Search" />
+                    </div>
+                }
+                <div class="panel-body">
+
+                    <div class="task-content">
+
+                        <ul class="task-list">
+                            @foreach (var slide in ViewBag.lstSlide)
+                            {
+                                <li>
+                                    <!--<div class="task-checkbox">-->
+                                    <!-- <input type="checkbox" class="list-child" value=""  /> -->
+                                    <!--<input type="checkbox" class="flat-grey list-child" />-->
+                                    <!-- <input type="checkbox" class="square-grey"/> -->
+                                    <!--</div>-->
+                                    <div class="task-title">
+                                        <span class="task-title-sp">@slide.SlideTitle</span>
+                                        <span class="label label-success">@slide.SlideCreatedate</span>
+                                        
+                                            <div class="pull-right hidden-phone">
+                                                <a href="~/Admin/InsertActive?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button></a>
+                                                <a href="~/Admin/SlideNeedEdit?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                                <a href="~/Admin/Delete?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                            </div>
+                                        
+                                    </div>
+                                </li>
+                            }
+                            @Html.PagedListPager((IPagedList)ViewBag.lstSlide, page => Url.Action("Slide", new { page }))
+                        </ul>
+                    </div>
+                    <div class=" add-task-row">
+                        <a class="btn btn-success btn-sm pull-left" href="/Admin/AddSlide">Add New Slide</a>
+                    </div>    
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- row end -->
+</section><!-- /.content -->
+<div class="footer-main">
+    Copyright &copy Director, 2022
+</div>
+

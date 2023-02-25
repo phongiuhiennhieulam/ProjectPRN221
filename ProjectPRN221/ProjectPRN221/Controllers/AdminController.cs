@@ -28,6 +28,8 @@ namespace ProjectPRN221.Controllers
                 lstProduct = lstProduct.Where(x => x.ProductName.Contains(search)).ToList().ToPagedList(page, pageSize);
             }
 
+            lstProduct = lstProduct.OrderByDescending(x => x.ProductCreateDate).ToList().ToPagedList(page, pageSize);
+
             ViewBag.lstProduct = lstProduct;
             ViewBag.lstColor = lstColor;
             ViewBag.lstStatusProduct = lstStatusProduct;
@@ -83,10 +85,95 @@ namespace ProjectPRN221.Controllers
             {
                 lstBlog = lstBlog.Where(x => x.BlogTitle.ToLower().Contains(search.ToLower())).ToList().ToPagedList(page, pageSize);
             }
-
+            lstBlog = lstBlog.OrderByDescending(x => x.BlogCreatedate).ToList().ToPagedList(page, pageSize);
             ViewBag.lstBlog = lstBlog;
             ViewBag.cate = "Blogs";
             return View();
+        }
+
+        public IActionResult Slide(string search, int page = 1, int pageSize = 5)
+        {
+            var lstSlide = shopDB.Slides.Where(x => x.SlideStatusId == false).ToList().ToPagedList(page, pageSize);
+            var lstSlideAc = shopDB.Slides.Where(x => x.SlideStatusId == true).ToList().ToPagedList(page, pageSize);
+            if (search != null)
+            {
+                lstSlide = lstSlide.Where(x => x.SlideTitle.ToLower().Contains(search.ToLower())).ToList().ToPagedList(page, pageSize);
+                //lstSlideAc = lstSlideAc.Where(x => x.SlideTitle.ToLower().Contains(search.ToLower())).ToList().ToPagedList(page, pageSize);
+            }
+            lstSlide = lstSlide.OrderByDescending(x => x.SlideCreatedate).ToList().ToPagedList(page, pageSize);
+
+            ViewBag.lstSlide = lstSlide;
+            ViewBag.lstSlideAc = lstSlideAc;
+            ViewBag.search = search;
+            ViewBag.cate = "Slides";
+            return View();
+        }
+
+        public IActionResult InsertActive(int Id)
+        {
+            Slide slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
+            if (slide != null)
+            {
+                slide.SlideStatusId = true;
+                shopDB.Entry(slide).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                shopDB.SaveChanges();
+            }
+            
+            ViewBag.cate = "Slides";
+            return RedirectToAction("Slide");
+        }
+
+        public IActionResult DeleteActive(int Id)
+        {
+            Slide slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
+            if (slide != null)
+            {
+                slide.SlideStatusId = false;
+                shopDB.Entry(slide).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                shopDB.SaveChanges();
+            }  
+            ViewBag.cate = "Slides";
+            return RedirectToAction("Slide");
+        }
+
+        public IActionResult Customer(string search, int page = 1, int pageSize = 5)
+        {
+            var role = shopDB.Roles.FirstOrDefault(x => x.RoleName == "Customer");
+            var lstCustomer = shopDB.Accounts.Where(x => x.AccountRoleId == role.RoleId).ToList().ToPagedList(page, pageSize);
+            if (search!= null)
+            {
+                lstCustomer = lstCustomer.Where(x => x.AccountName.ToLower().Contains(search.ToLower())).ToList().ToPagedList(page, pageSize);
+            }
+            ViewBag.lstCustomer = lstCustomer;
+            ViewBag.search = search;
+            ViewBag.cate = "Customers";
+            return View();
+        }
+
+        public IActionResult UnLockAccount(int Id)
+        {
+            Account acc = shopDB.Accounts.FirstOrDefault(x => x.AccountId == Id);
+            if (acc != null)
+            {
+                acc.AccountStatus = true;
+                shopDB.Entry(acc).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                shopDB.SaveChanges();
+            }
+            ViewBag.cate = "Customers";
+            return RedirectToAction("Customer");
+        }
+
+        public IActionResult LockAccount(int Id)
+        {
+            Account acc = shopDB.Accounts.FirstOrDefault(x => x.AccountId == Id);
+            if (acc != null)
+            {
+                acc.AccountStatus = false;
+                shopDB.Entry(acc).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                shopDB.SaveChanges();
+            }
+            ViewBag.cate = "Customers";
+            return RedirectToAction("Customer");
         }
     }
 }
