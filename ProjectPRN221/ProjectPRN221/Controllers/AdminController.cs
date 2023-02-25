@@ -74,8 +74,25 @@ namespace ProjectPRN221.Controllers
         public IActionResult EditProduct(int Id)
         {
             var product = shopDB.Products.FirstOrDefault(x => x.ProductId == Id);
+            var lstCategory = shopDB.Categories.ToList();
+            var lstColor = shopDB.Colors.ToList();
+            var lstStatusProduct = shopDB.StatusProducts.ToList();
             ViewBag.product = product;
+            ViewBag.CategoryId = new SelectList(lstCategory, "CategoryId", "CategoryName", product.CategoryId);
+            ViewBag.ColorId = new SelectList(lstColor, "ColorId", "ColorName", product.ColorId);
+            ViewBag.StatusProductId = new SelectList(lstStatusProduct, "StatusProductId", "StatusProductStatus", product.StatusProductId);
             return View();
+        }
+
+        public IActionResult DeleteProduct(int Id)
+        {
+            Product pro = shopDB.Products.FirstOrDefault(x => x.ProductId == Id);
+            if (pro != null)
+            {
+                shopDB.Products.Remove(pro);
+                shopDB.SaveChanges();
+            }
+            return RedirectToAction("Product");
         }
 
         public IActionResult Blog(string search, int page=1, int pageSize = 5)

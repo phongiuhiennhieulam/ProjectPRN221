@@ -161,3 +161,4 @@ E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\o
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddProduct.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Slide.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Customer.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditProduct.cshtml.g.cs
