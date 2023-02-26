@@ -163,6 +163,25 @@ namespace ProjectPRN221.Controllers
             return RedirectToAction("Slide");
         }
 
+        [HttpGet]
+        public IActionResult AddSlide()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult AddSlide(Slide slide)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("AddSlide");
+            }
+            shopDB.Slides.Add(slide);
+            shopDB.SaveChanges();
+            return RedirectToAction("Slide");
+        }
+
         public IActionResult DeleteSlide(int Id)
         {
             var slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
@@ -210,6 +229,11 @@ namespace ProjectPRN221.Controllers
             }
             ViewBag.cate = "Customers";
             return RedirectToAction("Customer");
+        }
+
+        public IActionResult Order()
+        {
+            return View();
         }
     }
 }
