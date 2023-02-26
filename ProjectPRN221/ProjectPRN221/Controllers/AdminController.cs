@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ProjectPRN221.Models;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using X.PagedList;
 
 namespace ProjectPRN221.Controllers
@@ -108,6 +109,15 @@ namespace ProjectPRN221.Controllers
             return View();
         }
 
+        public IActionResult DeleteBlog(int Id)
+        {
+            var blog = shopDB.Blogs.FirstOrDefault(x => x.BlogId == Id);
+            shopDB.Blogs.Remove(blog);
+            shopDB.SaveChanges();
+            ViewBag.cate = "Blogs";
+            return RedirectToAction("Blog");
+        }
+
         public IActionResult Slide(string search, int page = 1, int pageSize = 5)
         {
             var lstSlide = shopDB.Slides.Where(x => x.SlideStatusId == false).ToList().ToPagedList(page, pageSize);
@@ -149,6 +159,15 @@ namespace ProjectPRN221.Controllers
                 shopDB.Entry(slide).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 shopDB.SaveChanges();
             }  
+            ViewBag.cate = "Slides";
+            return RedirectToAction("Slide");
+        }
+
+        public IActionResult DeleteSlide(int Id)
+        {
+            var slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
+            shopDB.Slides.Remove(slide);
+            shopDB.SaveChanges();
             ViewBag.cate = "Slides";
             return RedirectToAction("Slide");
         }
