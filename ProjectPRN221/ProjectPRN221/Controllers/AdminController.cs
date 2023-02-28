@@ -233,7 +233,21 @@ namespace ProjectPRN221.Controllers
 
         public IActionResult Order()
         {
+            ViewBag.cate = "Orders";
             return View();
         }
+
+        public IActionResult AceptOrder(int Id)
+        {
+            ViewBag.cate = "Orders";
+            return RedirectToAction("Order");
+        }
+
+        public IActionResult CancelledOrder(int Id)
+        {
+            ViewBag.cate = "Orders";
+            return RedirectToAction("Order");
+        }
+
     }
 }

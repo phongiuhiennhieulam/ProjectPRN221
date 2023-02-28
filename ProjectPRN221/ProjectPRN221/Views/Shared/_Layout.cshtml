@@ -367,12 +367,22 @@
                         </li>
                     }
 
+                    @if (ViewBag.cate == "Orders")
+                    {
+                        <li class="active">
+                            <a href="~/Admin/Order">
+                                <i class="fa fa-glass"></i> <span>Orders</span>
+                            </a>
+                        </li>
+                    } else
+                    {
+                        <li>
+                            <a href="~/Admin/Order">
+                                <i class="fa fa-glass"></i> <span>Orders</span>
+                            </a>
+                        </li>
+                    }
 
-                    <li>
-                        <a href="simple.html">
-                            <i class="fa fa-glass"></i> <span>Orders</span>
-                        </a>
-                    </li>
 
                     @if (ViewBag.cate == "Customers")
                     {

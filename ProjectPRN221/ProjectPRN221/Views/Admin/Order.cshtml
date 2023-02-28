@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewData["Title"] = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Mvc.Common
+@using X.PagedList;
+<section class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Pending Order
+                </header>
+                
+                <div class="panel-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Customer</th>
+                                <th>Product</th>
+                                <th>Amount</th>
+                                <th>OrderDate</th>
+                                <th>TotolMoney</th>
+                                <th>StatusOrder</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+
+                        </tbody>
+                    </table>
+                </div>
+                @*@Html.PagedListPager((IPagedList)ViewBag.lstProduct, page => Url.Action("Product", new { page }))*@
+
+            </section>
+            <section class="panel">
+                <header class="panel-heading">
+                    Pending Order
+                </header>
+
+               
+                <div class="panel-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Customer</th>
+                                <th>Product</th>
+                                <th>Amount</th>
+                                <th>OrderDate</th>
+                                <th>TotolMoney</th>
+                                <th>StatusOrder</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+
+                        </tbody>
+                    </table>
+                </div>
+                @*@Html.PagedListPager((IPagedList)ViewBag.lstProduct, page => Url.Action("Product", new { page }))*@
+
+            </section>
+            <div class=" add-task-row">
+                <a class="btn btn-success btn-sm pull-left" href="/Admin/AddProduct">Add New Product</a>
+            </div>
+        </div>
+    </div>
+   
+</section>
+<div class="footer-main">
+    Copyright &copy Director, 2022
+</div>
+
