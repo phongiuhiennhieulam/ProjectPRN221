@@ -19,12 +19,17 @@ namespace ProjectPRN221.Models
 
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Blog> Blogs { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<CartDetail> CartDetails { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Color> Colors { get; set; }
+        public virtual DbSet<Conversation> Conversations { get; set; }
         public virtual DbSet<Function> Functions { get; set; }
+        public virtual DbSet<Message> Messages { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<OrderStatus> OrderStatuses { get; set; }
+        public virtual DbSet<Participate> Participates { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Productsize> Productsizes { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
@@ -105,7 +110,7 @@ namespace ProjectPRN221.Models
                     .WithMany(p => p.Accounts)
                     .HasForeignKey(d => d.AccountRoleId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Account__account__534D60F1");
+                    .HasConstraintName("FK__Account__account__5BE2A6F2");
             });
 
             modelBuilder.Entity<Blog>(entity =>
@@ -159,6 +164,58 @@ namespace ProjectPRN221.Models
                     .HasColumnName("blog_title");
             });
 
+            modelBuilder.Entity<Cart>(entity =>
+            {
+                entity.ToTable("Cart");
+
+                entity.Property(e => e.CartId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("cart_id");
+
+                entity.Property(e => e.AccountId).HasColumnName("account_id");
+
+                entity.Property(e => e.CartTotol)
+                    .HasColumnType("money")
+                    .HasColumnName("cart_totol");
+
+                entity.HasOne(d => d.Account)
+                    .WithMany(p => p.Carts)
+                    .HasForeignKey(d => d.AccountId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Cart_Account");
+            });
+
+            modelBuilder.Entity<CartDetail>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("CartDetail");
+
+                entity.Property(e => e.CartId).HasColumnName("cart_id");
+
+                entity.Property(e => e.CartdetailId).HasColumnName("cartdetail_id");
+
+                entity.Property(e => e.Price)
+                    .HasColumnType("money")
+                    .HasColumnName("price");
+
+                entity.Property(e => e.ProductId).HasColumnName("product_id");
+
+                entity.Property(e => e.Quantity).HasColumnName("quantity");
+
+                entity.HasOne(d => d.Cart)
+                    .WithMany()
+                    .HasForeignKey(d => d.CartId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CartDetail_Cart");
+
+                entity.HasOne(d => d.Product)
+                    .WithMany()
+                    .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CartDetail_product");
+            });
+
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.ToTable("Category");
@@ -179,6 +236,34 @@ namespace ProjectPRN221.Models
                 entity.Property(e => e.ColorName)
                     .HasMaxLength(30)
                     .HasColumnName("color_name");
+            });
+
+            modelBuilder.Entity<Conversation>(entity =>
+            {
+                entity.HasKey(e => e.CId);
+
+                entity.ToTable("Conversation");
+
+                entity.Property(e => e.CId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("c_id");
+
+                entity.Property(e => e.AccountId).HasColumnName("account_id");
+
+                entity.Property(e => e.Cname)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .HasColumnName("cname");
+
+                entity.Property(e => e.CreateAt)
+                    .HasColumnType("datetime")
+                    .HasColumnName("create_at");
+
+                entity.HasOne(d => d.Account)
+                    .WithMany(p => p.Conversations)
+                    .HasForeignKey(d => d.AccountId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Conversation_Account");
             });
 
             modelBuilder.Entity<Function>(entity =>
@@ -207,6 +292,42 @@ namespace ProjectPRN221.Models
                 entity.Property(e => e.FunctionOrdernumber).HasColumnName("function_ordernumber");
             });
 
+            modelBuilder.Entity<Message>(entity =>
+            {
+                entity.HasKey(e => e.MId);
+
+                entity.ToTable("Message");
+
+                entity.Property(e => e.MId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("m_id");
+
+                entity.Property(e => e.AccountId).HasColumnName("account_id");
+
+                entity.Property(e => e.CId).HasColumnName("c_id");
+
+                entity.Property(e => e.CreateAt)
+                    .HasColumnType("datetime")
+                    .HasColumnName("create_at");
+
+                entity.Property(e => e.Message1)
+                    .IsRequired()
+                    .HasMaxLength(1000)
+                    .HasColumnName("message");
+
+                entity.HasOne(d => d.Account)
+                    .WithMany(p => p.Messages)
+                    .HasForeignKey(d => d.AccountId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Message_Account");
+
+                entity.HasOne(d => d.CIdNavigation)
+                    .WithMany(p => p.Messages)
+                    .HasForeignKey(d => d.CId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Message_Conversation");
+            });
+
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.ToTable("Order");
@@ -232,25 +353,25 @@ namespace ProjectPRN221.Models
                 entity.HasOne(d => d.Account)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.AccountId)
-                    .HasConstraintName("FK__Order__account_i__5441852A");
+                    .HasConstraintName("FK__Order__account_i__628FA481");
 
                 entity.HasOne(d => d.OrderStatus)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.OrderStatusId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Order__Order_sta__5535A963");
+                    .HasConstraintName("FK__Order__Order_sta__6383C8BA");
 
                 entity.HasOne(d => d.Shipping)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.ShippingId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Order__shipping___5629CD9C");
+                    .HasConstraintName("FK__Order__shipping___6477ECF3");
             });
 
             modelBuilder.Entity<OrderDetail>(entity =>
             {
                 entity.HasKey(e => e.OrderDetailsId)
-                    .HasName("PK__Order_De__F68B9B8A9307A265");
+                    .HasName("PK__Order_De__F68B9B8A50993982");
 
                 entity.ToTable("Order_Details");
 
@@ -271,7 +392,7 @@ namespace ProjectPRN221.Models
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("FK__Order_Det__Order__571DF1D5");
+                    .HasConstraintName("FK__Order_Det__Order__656C112C");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.OrderDetails)
@@ -288,6 +409,33 @@ namespace ProjectPRN221.Models
                 entity.Property(e => e.OrderStatusStatus)
                     .HasMaxLength(100)
                     .HasColumnName("Order_status_status");
+            });
+
+            modelBuilder.Entity<Participate>(entity =>
+            {
+                entity.HasKey(e => e.PId);
+
+                entity.ToTable("Participate");
+
+                entity.Property(e => e.PId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("p_id");
+
+                entity.Property(e => e.AccountId).HasColumnName("account_id");
+
+                entity.Property(e => e.CId).HasColumnName("c_id");
+
+                entity.HasOne(d => d.Account)
+                    .WithMany(p => p.Participates)
+                    .HasForeignKey(d => d.AccountId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Participate_Account");
+
+                entity.HasOne(d => d.CIdNavigation)
+                    .WithMany(p => p.Participates)
+                    .HasForeignKey(d => d.CId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Participate_Conversation");
             });
 
             modelBuilder.Entity<Product>(entity =>
@@ -372,7 +520,7 @@ namespace ProjectPRN221.Models
                 entity.HasOne(d => d.Size)
                     .WithMany()
                     .HasForeignKey(d => d.SizeId)
-                    .HasConstraintName("FK__productsi__size___5CD6CB2B");
+                    .HasConstraintName("FK__productsi__size___6D0D32F4");
             });
 
             modelBuilder.Entity<Role>(entity =>
@@ -410,12 +558,12 @@ namespace ProjectPRN221.Models
                 entity.HasOne(d => d.Function)
                     .WithMany(p => p.RoleFunctions)
                     .HasForeignKey(d => d.FunctionId)
-                    .HasConstraintName("FK__Role_func__funct__5DCAEF64");
+                    .HasConstraintName("FK__Role_func__funct__6E01572D");
 
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.RoleFunctions)
                     .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("FK__Role_func__role___5EBF139D");
+                    .HasConstraintName("FK__Role_func__role___6EF57B66");
             });
 
             modelBuilder.Entity<Shipping>(entity =>

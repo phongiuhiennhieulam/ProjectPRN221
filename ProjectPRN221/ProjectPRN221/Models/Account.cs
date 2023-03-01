@@ -9,7 +9,11 @@ namespace ProjectPRN221.Models
     {
         public Account()
         {
+            Carts = new HashSet<Cart>();
+            Conversations = new HashSet<Conversation>();
+            Messages = new HashSet<Message>();
             Orders = new HashSet<Order>();
+            Participates = new HashSet<Participate>();
         }
 
         public int AccountId { get; set; }
@@ -27,6 +31,10 @@ namespace ProjectPRN221.Models
         public DateTime? AccountDob { get; set; }
 
         public virtual Role AccountRole { get; set; }
+        public virtual ICollection<Cart> Carts { get; set; }
+        public virtual ICollection<Conversation> Conversations { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Participate> Participates { get; set; }
     }
 }
