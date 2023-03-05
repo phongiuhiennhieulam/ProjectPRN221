@@ -17,38 +17,45 @@
                         <thead>
                             <tr>
                                 <th>Product Name</th>
+                                <th>Image</th>
                                 <th>Quantity</th>
                                 <th>Price</th>
-                                <th>Status</th>
+                                <th>Total Price</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @*@foreach (var or in Model.lstOder)
+                            @foreach (var or in ViewBag.lstCompleted)
                             {
-                                foreach (var de in Model.lstOde)
+                                foreach (var de in ViewBag.lstOrderDetail)
                                 {
-                                    if (or.Order_id == de.Order_id)
+                                    if (or.OrderId == de.OrderId)
                                     {
-                                        foreach (var item in Model.lstPro)
+                                        foreach (var item in ViewBag.lstProduct)
                                         {
-                                            if (item.product_id == de.product_id)
+                                            if (item.ProductId == de.ProductId)
                                             {
-
+                                                
                                                 <tr>
-                                                    <td>@item.product_name</td>
-                                                    <td>@de.Order_Details_num</td>
-                                                    <td>@de.Order_Details_price</td>
-                                                    <td><a href="/Product/Index?Id=@item.product_id"><button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button></a></td>
+                                                    <td style="padding-top:40px">@item.ProductName</td>
+                                                    <td ><img class="media-object" src="~/images/product-details/product/@item.ProductImage"></td>
+                                                    <td style="padding-top:40px">@de.OrderDetailsNum</td>
+                                                    <td style="padding-top:40px">@item.ProductPrice </td>
+                                                    <td style="padding-top:40px">@or.OrderTotalMoney</td>
+                                                    <td style="padding-top:40px">
+                                                        @*Mua lại*@
+                                                        <a href="/User/Reorder?Id=@or.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                                        @*Contact ADMIN*@
+                                                        <a href="/User/Contact?Id=@or.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                                        @*Đánh giá sản phẩm*@
+                                                        <a href="/User/Commet?Id=@item.ProductId"></a>
+                                                    </td>
                                                 </tr>
-
                                             }
-
                                         }
                                     }
-
                                 }
-                            }*@
+                            }
                         </tbody>
                     </table>
                 </div>

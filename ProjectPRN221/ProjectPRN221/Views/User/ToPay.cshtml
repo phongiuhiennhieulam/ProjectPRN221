@@ -11,50 +11,52 @@
         <div class="col-md-12">
             <section class="panel tasks-widget">
                 <header class="panel-heading">
-                    My Purchase
+                    To Pay
                 </header>
                 <div class="panel-body table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th>Product Name</th>
+                                <th>Image</th>
                                 <th>Quantity</th>
                                 <th>Price</th>
-                                <th>Status</th>
+                                <th>Total Price</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @*@foreach (var or in Model.lstOder)
+                            @foreach (var or in ViewBag.lstToPay)
                             {
-                                foreach (var de in Model.lstOde)
+                                foreach (var de in ViewBag.lstOrderDetail)
                                 {
-                                    if (or.Order_id == de.Order_id)
+                                    if (or.OrderId == de.OrderId)
                                     {
-                                        foreach (var item in Model.lstPro)
+                                        foreach (var item in ViewBag.lstProduct)
                                         {
-                                            if (item.product_id == de.product_id)
+                                            if (item.ProductId == de.ProductId)
                                             {
-                                                foreach (var sta in Model.lstOSta)
-                                                {
-                                                    if (sta.Order_status_id == or.Order_status_id)
-                                                    {
-                                                        <tr>
-                                                            <td>@item.product_name</td>
-                                                            <td>@de.Order_Details_num</td>
-                                                            <td>@de.Order_Details_price</td>
-                                                            <td>@sta.Order_status_status</td>
-                                                            <td><a href="/UserAdmin/Cancel?Id=@or.Order_id"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a></td>
-                                                        </tr>
-                                                    }
-                                                }
+                                                
+                                                <tr>
+                                                    <td style="padding-top:40px">@item.ProductName</td>
+                                                    <td ><img class="media-object" src="~/images/product-details/product/@item.ProductImage"></td>
+                                                    <td style="padding-top:40px">@de.OrderDetailsNum</td>
+                                                    <td style="padding-top:40px">@item.ProductPrice </td>
+                                                    <td style="padding-top:40px">@or.OrderTotalMoney</td>
+                                                    <td style="padding-top:40px">
+                                                        @*Mua lại*@
+                                                        <a href="/User/Reorder?Id=@or.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                                        @*Contact ADMIN*@
+                                                        <a href="/User/Contact?Id=@or.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                                        @*Đánh giá sản phẩm*@
+                                                        <a href="/User/Commet?Id=@item.ProductId"></a>
+                                                    </td>
+                                                </tr>
                                             }
-
                                         }
                                     }
-
                                 }
-                            }*@
+                            }
                         </tbody>
                     </table>
                 </div>
