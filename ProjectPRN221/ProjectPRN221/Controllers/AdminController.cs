@@ -85,6 +85,19 @@ namespace ProjectPRN221.Controllers
             return View();
         }
 
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult EditProduct(Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("EditProduct");
+            }
+            return RedirectToAction("Product");
+        }
+
+
+
         public IActionResult DeleteProduct(int Id)
         {
             Product pro = shopDB.Products.FirstOrDefault(x => x.ProductId == Id);
@@ -107,6 +120,42 @@ namespace ProjectPRN221.Controllers
             ViewBag.lstBlog = lstBlog;
             ViewBag.cate = "Blogs";
             return View();
+        }
+
+        public IActionResult AddBlog()
+        {
+            ViewBag.cate = "Blogs";
+            return View();
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult AddBlog(Blog blog)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("AddBlog");
+            }
+            return RedirectToAction("Blog");
+        }
+
+        public IActionResult EditBlog(int Id)
+        {
+            var blog = shopDB.Blogs.FirstOrDefault(x => x.BlogId == Id);
+            ViewBag.blog = blog;
+            ViewBag.cate = "Blogs";
+            return View();
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult EditBlog(Blog blog)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("EditBlog");
+            }
+            return RedirectToAction("EditBog");
         }
 
         public IActionResult DeleteBlog(int Id)
@@ -179,6 +228,24 @@ namespace ProjectPRN221.Controllers
             }
             shopDB.Slides.Add(slide);
             shopDB.SaveChanges();
+            return RedirectToAction("Slide");
+        }
+
+        public IActionResult EditSlide(int Id)
+        {
+            var slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
+            ViewBag.slide = slide;
+            return View();
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult EditSlide(Slide slide)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("EditSlide");
+            }
             return RedirectToAction("Slide");
         }
 

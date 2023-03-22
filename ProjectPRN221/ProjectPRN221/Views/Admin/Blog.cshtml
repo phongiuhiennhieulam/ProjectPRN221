@@ -34,7 +34,7 @@
                                 <li>
                                     <div class="task-title">
                                         <span class="task-title-sp">@blog.BlogTitle</span>
-                                        <span class="label label-success">@blog.BlogCreatedate</span>
+                                        <span class="label label-success">@String.Format("{0:dd/MM/yyyy}", blog.BlogCreatedate)</span>
                                         <div class="pull-right hidden-phone">
                                            
                                                 @*<a href="#"><button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button></a>*@
@@ -48,12 +48,10 @@
                             @Html.PagedListPager((IPagedList)ViewBag.lstBlog, page => Url.Action("Blog", new { page }))
                         </ul>
                     </div>
-                    @if (User.IsInRole("Marketing"))
-                    {
-                        <div class=" add-task-row">
-                            <a class="btn btn-success btn-sm pull-left" href="/AddBlogAdmin/Index">Add New Blog</a>
-                        </div>
-                    }
+                    <div class=" add-task-row">
+                        <a class="btn btn-success btn-sm pull-left" href="/Admin/AddBlog">Add New Blog</a>
+                    </div>
+
                 </div>
             </section>
         </div>
