@@ -1,0 +1,115 @@
+﻿@model ProjectPRN221.Models.Slide
+
+@{
+    ViewData["Title"] = "AddSlide";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h1>AddSlide</h1>
+
+<h4>Slide</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddSlide">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SlideTitle" class="control-label"></label>
+                <input asp-for="SlideTitle" class="form-control" />
+                <span asp-validation-for="SlideTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SlideCreatedate" class="control-label"></label>
+                <input asp-for="SlideCreatedate" class="form-control" />
+                <span asp-validation-for="SlideCreatedate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SlideCreateby" class="control-label"></label>
+                <input asp-for="SlideCreateby" class="form-control" />
+                <span asp-validation-for="SlideCreateby" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SlideModifydate" class="control-label"></label>
+                <input asp-for="SlideModifydate" class="form-control" />
+                <span asp-validation-for="SlideModifydate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SlideModifyby" class="control-label"></label>
+                <input asp-for="SlideModifyby" class="form-control" />
+                <span asp-validation-for="SlideModifyby" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SlideImageslide" class="control-label"></label>
+                <input asp-for="SlideImageslide" class="form-control" />
+                <span asp-validation-for="SlideImageslide" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SlideDescriptions" class="control-label"></label>
+                <input asp-for="SlideDescriptions" class="form-control" />
+                <span asp-validation-for="SlideDescriptions" class="text-danger"></span>
+            </div>
+            @*<div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="SlideStatusId" /> @Html.DisplayNameFor(model => model.SlideStatusId)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>*@
+
+<section class="content">
+<!-- Main row -->
+<div class="row">
+    <div class="col-md-8">
+        <section class="panel tasks-widget">
+            <header class="panel-heading">
+                Add Slide
+            </header>
+            @using (Html.BeginForm("AddSlide", "Admin", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="panel-body">
+                    @*<form asp-action="AddSlide" asp-controller="Admin" enctype="multipart/form-data" method="post" >*@
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="SlideTitle" class="control-label"></label>
+                            <input asp-for="SlideTitle" class="form-control" />
+                            <span asp-validation-for="SlideTitle" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SlideCreatedate" class="control-label"></label>
+                                <input asp-for="SlideCreatedate" type="date" value="@ViewBag.date" class="form-control" />
+                            <span asp-validation-for="SlideCreatedate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SlideCreateby" class="control-label"></label>
+                            <input asp-for="SlideCreateby" class="form-control" />
+                            <span asp-validation-for="SlideCreateby" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SlideImageslide" class="control-label"></label>
+                            <input type="file" asp-for="SlideImageslide" class="form-control" />
+                            <span asp-validation-for="SlideImageslide" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SlideDescriptions" class="control-label"></label>
+                            <input asp-for="SlideDescriptions" class="form-control" />
+                            <span asp-validation-for="SlideDescriptions" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-info">Add Slide</button>              
+                    @*</form>*@
+                </div>
+            }
+        </section>
+    </div>
+</div>
+<!-- row end -->
+</section>
+<div class="footer-main">
+    Copyright &copy Director, 2022
+</div>
+
+

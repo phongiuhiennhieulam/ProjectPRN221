@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using ProjectPRN221.Models;
+using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using X.PagedList;
@@ -215,6 +217,7 @@ namespace ProjectPRN221.Controllers
         [HttpGet]
         public IActionResult AddSlide()
         {
+            ViewBag.date = String.Format("{0:dd/MM/yyyy}", DateTime.Now);
             return View();
         }
 
@@ -226,6 +229,7 @@ namespace ProjectPRN221.Controllers
             {
                 return View("AddSlide");
             }
+            slide.SlideStatusId = false;
             shopDB.Slides.Add(slide);
             shopDB.SaveChanges();
             return RedirectToAction("Slide");
@@ -240,12 +244,23 @@ namespace ProjectPRN221.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public IActionResult EditSlide(Slide slide)
-        {
+        public IActionResult EditSlide(int SlideId,   Slide slide)
+        { 
             if (!ModelState.IsValid)
             {
+                ViewBag.slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == SlideId);
                 return View("EditSlide");
             }
+            var sl = shopDB.Slides.FirstOrDefault(x => x.SlideId == SlideId);
+            if (sl != null)
+            {
+                sl.SlideTitle = slide.SlideTitle;
+                sl.SlideDescriptions = slide.SlideDescriptions;
+                sl.SlideModifyby = slide.SlideModifyby;
+                sl.SlideModifydate = slide.SlideModifydate;
+            }
+            shopDB.Entry(sl).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            shopDB.SaveChanges();
             return RedirectToAction("Slide");
         }
 
@@ -296,6 +311,16 @@ namespace ProjectPRN221.Controllers
             }
             ViewBag.cate = "Customers";
             return RedirectToAction("Customer");
+        }
+
+        public IActionResult ViewOrderMember(int Id)
+        {
+            ViewBag.member = shopDB.Accounts.FirstOrDefault(x => x.AccountId == Id);
+            ViewBag.lstOrder = shopDB.Orders.ToList();
+            ViewBag.lstProduct = shopDB.Products.ToList();
+            ViewBag.lstOrderDetail = shopDB.OrderDetails.ToList();
+            ViewBag.lstOrderStatus = shopDB.OrderStatuses.ToList();
+            return View();
         }
 
         public IActionResult Order()
