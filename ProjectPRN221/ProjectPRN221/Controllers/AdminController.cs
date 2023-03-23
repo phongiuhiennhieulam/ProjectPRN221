@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ProjectPRN221.Models;
 using System;
 using System.Linq;
@@ -89,16 +90,25 @@ namespace ProjectPRN221.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public IActionResult EditProduct(Product product)
+        public IActionResult EditProduct(int proId, Product product)
         {
             if (!ModelState.IsValid)
             {
+                ViewBag.product = shopDB.Products.FirstOrDefault(x => x.ProductId == proId);
+                var lstCategory = shopDB.Categories.ToList();
+                var lstColor = shopDB.Colors.ToList();
+                var lstStatusProduct = shopDB.StatusProducts.ToList();
+                ViewBag.product = product;
+                ViewBag.CategoryId = new SelectList(lstCategory, "CategoryId", "CategoryName", product.CategoryId);
+                ViewBag.ColorId = new SelectList(lstColor, "ColorId", "ColorName", product.ColorId);
+                ViewBag.StatusProductId = new SelectList(lstStatusProduct, "StatusProductId", "StatusProductStatus", product.StatusProductId);
                 return View("EditProduct");
             }
+
+            shopDB.Entry(product).State = EntityState.Modified;
+            shopDB.SaveChanges();
             return RedirectToAction("Product");
         }
-
-
 
         public IActionResult DeleteProduct(int Id)
         {
@@ -325,20 +335,43 @@ namespace ProjectPRN221.Controllers
 
         public IActionResult Order()
         {
+            ViewBag.lstOrder = shopDB.Orders.ToList();
+            ViewBag.lstOrderDetail = shopDB.OrderDetails.ToList();
+            ViewBag.lstProduct = shopDB.Products.ToList();
+            ViewBag.lstOrderStatus = shopDB.OrderStatuses.ToList();
+            ViewBag.lstMember = shopDB.Accounts.ToList();
             ViewBag.cate = "Orders";
             return View();
         }
 
         public IActionResult AceptOrder(int Id)
         {
+            var order = shopDB.Orders.FirstOrDefault(x => x.OrderId == Id);
+            order.OrderStatusId = 2;
+            shopDB.Entry(order).State = EntityState.Modified;
+            shopDB.SaveChanges();
             ViewBag.cate = "Orders";
             return RedirectToAction("Order");
         }
 
         public IActionResult CancelledOrder(int Id)
         {
+            var order = shopDB.Orders.FirstOrDefault(x => x.OrderId == Id);
+            order.OrderStatusId = 5;
+            shopDB.Entry(order).State = EntityState.Modified;
+            shopDB.SaveChanges();
             ViewBag.cate = "Orders";
             return RedirectToAction("Order");
+        }
+
+        public IActionResult Complete(int Id)
+        {
+            var order = shopDB.Orders.FirstOrDefault(x => x.OrderId == Id);
+            order.OrderStatusId = 4;
+            shopDB.Entry(order).State = EntityState.Modified;
+            shopDB.SaveChanges();
+            ViewBag.cate = "Orders";
+            return RedirectToAction("Index");
         }
 
     }

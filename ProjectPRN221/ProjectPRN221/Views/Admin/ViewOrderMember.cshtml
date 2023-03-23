@@ -13,13 +13,6 @@
             <header class="panel-heading">
                 List Order
             </header>
-            @*@using (Html.BeginForm("Product", "Admin", FormMethod.Get))
-            {
-                <div class="input-group">
-                    <input type="text" name="search" value="@ViewBag.search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                    <input type="submit" class="btn btn-primary" value="Search" />
-                </div>
-            }*@
             <div class="panel-body table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -47,15 +40,15 @@
                                                 @if (j.ProductId == i.ProductId)
                                                 {
                                                     <tr>
-                                                        <td>@j.ProductImage</td>
-                                                        <td>@j.ProductName</td>
-                                                        <td>@i.OrderDetailsNum</td>
-                                                        <td>@item.OrderTotalMoney</td>
+                                                        <td><img class="media-object" src="~/images/product-details/product/@j.ProductImage" /></td>
+                                                        <td style="padding-top:40px">@j.ProductName</td>
+                                                        <td style="padding-top:40px">@i.OrderDetailsNum</td>
+                                                        <td style="padding-top:40px">@item.OrderTotalMoney</td>
                                                         @foreach (var k in ViewBag.lstOrderStatus)
                                                         {
                                                             @if (k.OrderStatusId == item.OrderStatusId)
                                                             {
-                                                            <td>@k.OrderStatusStatus</td>
+                                                                <td style="padding-top:40px">@k.OrderStatusStatus</td>
                                                             }
                                                     
                                                          }

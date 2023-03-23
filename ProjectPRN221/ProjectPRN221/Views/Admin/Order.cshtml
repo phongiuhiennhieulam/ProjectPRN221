@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Order";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -16,67 +15,226 @@
                 <header class="panel-heading">
                     Pending Order
                 </header>
-                
+
                 <div class="panel-body table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Customer</th>
                                 <th>Product</th>
+                                <th>Image</th>
                                 <th>Amount</th>
                                 <th>OrderDate</th>
                                 <th>TotolMoney</th>
                                 <th>StatusOrder</th>
-                                <th>Status</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            @foreach (var item in ViewBag.lstOrder)
+                            {
+                                @if (item.OrderStatusId == 1) {
+
+                                    @foreach (var j in ViewBag.lstMember)
+                                    {
+                                        @if (item.AccountId == j.AccountId)
+                                        {
+                                            @foreach (var l in ViewBag.lstOrderDetail)
+                                            {
+                                                @if (item.OrderId == l.OrderId)
+                                                {
+                                                    @foreach (var k in ViewBag.lstProduct)
+                                                    {
+                                                        @if (k.ProductId == l.ProductId)
+                                                        {
+                                                            @foreach (var i in ViewBag.lstOrderStatus)
+                                                            {
+                                                                @if (i.OrderStatusId == item.OrderStatusId)
+                                                                {
+                                                                    <tr>
+                                                                        <td style="padding-top:40px">@j.AccountName</td>
+                                                                        <td style="padding-top:40px">@k.ProductName</td>
+                                                                        <td><img class="media-object" src="~/images/product-details/product/@k.ProductImage" /></td>
+                                                                        <td style="padding-top:40px">@l.OrderDetailsNum</td>
+                                                                        <td style="padding-top:40px">@String.Format("{0:dd/MM/yyyy}", item.OrderDate)</td>
+                                                                        <td style="padding-top:40px">@item.OrderTotalMoney</td>
+                                                                        <td style="padding-top:40px">@i.OrderStatusStatus</td>
+                                                                        <td style="padding-top:38px">
+                                                                            <div class="pull-right hidden-phone">
+                                                                                <a href="~/Admin/AceptOrder?Id=@item.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                                                                <a href="~/Admin/CancelledOrder?Id=@item.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                }
+                                                            }
+                                                            
+                                                        }
+                                                    }
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
 
                         </tbody>
                     </table>
                 </div>
-                @*@Html.PagedListPager((IPagedList)ViewBag.lstProduct, page => Url.Action("Product", new { page }))*@
-
             </section>
             <section class="panel">
                 <header class="panel-heading">
-                    Pending Order
+                    ToReceive Order
                 </header>
 
-               
+
                 <div class="panel-body table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Customer</th>
                                 <th>Product</th>
+                                <th>Image</th>
                                 <th>Amount</th>
                                 <th>OrderDate</th>
                                 <th>TotolMoney</th>
                                 <th>StatusOrder</th>
-                                <th>Status</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            @foreach (var item in ViewBag.lstOrder)
+                            {
+                                @if (item.OrderStatusId == 2)
+                                {
 
+                                    @foreach (var j in ViewBag.lstMember)
+                                    {
+                                        @if (item.AccountId == j.AccountId)
+                                        {
+                                            @foreach (var l in ViewBag.lstOrderDetail)
+                                            {
+                                                @if (item.OrderId == l.OrderId)
+                                                {
+                                                    @foreach (var k in ViewBag.lstProduct)
+                                                    {
+                                                        @if (k.ProductId == l.ProductId)
+                                                        {
+                                                            @foreach (var i in ViewBag.lstOrderStatus)
+                                                            {
+                                                                @if (i.OrderStatusId == item.OrderStatusId)
+                                                                {
+                                                                    <tr>
+                                                                        <td style="padding-top:40px">@j.AccountName</td>
+                                                                        <td style="padding-top:40px">@k.ProductName</td>
+                                                                        <td><img class="media-object" src="~/images/product-details/product/@k.ProductImage" /></td>
+                                                                        <td style="padding-top:40px">@l.OrderDetailsNum</td>
+                                                                        <td style="padding-top:40px">@String.Format("{0:dd/MM/yyyy}", item.OrderDate)</td>
+                                                                        <td style="padding-top:40px">@item.OrderTotalMoney</td>
+                                                                        <td style="padding-top:40px">@i.OrderStatusStatus</td>
+                                                                        <td style="padding-top:38px">
+                                                                            <div class="pull-right hidden-phone">
+                                                                                <a href="~/Admin/AceptOrder?Id=@item.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                                                                <a href="~/Admin/CancelledOrder?Id=@item.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                }
+                                                            }
+
+                                                        }
+                                                    }
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
                         </tbody>
                     </table>
                 </div>
-                @*@Html.PagedListPager((IPagedList)ViewBag.lstProduct, page => Url.Action("Product", new { page }))*@
-
             </section>
-            <div class=" add-task-row">
-                <a class="btn btn-success btn-sm pull-left" href="/Admin/AddProduct">Add New Product</a>
-            </div>
+            <section class="panel">
+                <header class="panel-heading">
+                    Success Order
+                </header>
+
+
+                <div class="panel-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Product</th>
+                                <th>Image</th>
+                                <th>Amount</th>
+                                <th>OrderDate</th>
+                                <th>TotolMoney</th>
+                                <th>StatusOrder</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.lstOrder)
+                            {
+                                @if (item.OrderStatusId == 4)
+                                {
+
+                                    @foreach (var j in ViewBag.lstMember)
+                                    {
+                                        @if (item.AccountId == j.AccountId)
+                                        {
+                                            @foreach (var l in ViewBag.lstOrderDetail)
+                                            {
+                                                @if (item.OrderId == l.OrderId)
+                                                {
+                                                    @foreach (var k in ViewBag.lstProduct)
+                                                    {
+                                                        @if (k.ProductId == l.ProductId)
+                                                        {
+                                                            @foreach (var i in ViewBag.lstOrderStatus)
+                                                            {
+                                                                @if (i.OrderStatusId == item.OrderStatusId)
+                                                                {
+                                                                    <tr>
+                                                                        <td style="padding-top:40px">@j.AccountName</td>
+                                                                        <td style="padding-top:40px">@k.ProductName</td>
+                                                                        <td><img class="media-object" src="~/images/product-details/product/@k.ProductImage" /></td>
+                                                                        <td style="padding-top:40px">@l.OrderDetailsNum</td>
+                                                                        <td style="padding-top:40px">@String.Format("{0:dd/MM/yyyy}", item.OrderDate)</td>
+                                                                        <td style="padding-top:40px">@item.OrderTotalMoney</td>
+                                                                        <td style="padding-top:40px">@i.OrderStatusStatus</td>
+                                                                        <td style="padding-top:38px">
+                                                                            <div class="pull-right hidden-phone">
+                                                                                <a href="~/Admin/AceptOrder?Id=@item.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                                                                <a href="~/Admin/CancelledOrder?Id=@item.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                }
+                                                            }
+
+                                                        }
+                                                    }
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
     </div>
-   
+
 </section>
 <div class="footer-main">
     Copyright &copy Director, 2022
