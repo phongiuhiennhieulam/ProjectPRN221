@@ -150,6 +150,8 @@ namespace ProjectPRN221.Controllers
             {
                 return View("AddBlog");
             }
+            shopDB.Blogs.Add(blog);
+            shopDB.SaveChanges();
             return RedirectToAction("Blog");
         }
 
