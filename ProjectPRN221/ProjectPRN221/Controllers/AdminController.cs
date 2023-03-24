@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ProjectPRN221.Models;
 using System;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using X.PagedList;
@@ -372,6 +374,11 @@ namespace ProjectPRN221.Controllers
             shopDB.SaveChanges();
             ViewBag.cate = "Orders";
             return RedirectToAction("Index");
+        }
+
+        public IActionResult SummerNote()
+        {
+            return View();
         }
 
     }
