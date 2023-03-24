@@ -5,77 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<h1>EditBlog</h1>
-
-<h4>Blog</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="EditBlog">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="BlogId" />
-            <div class="form-group">
-                <label asp-for="BlogTitle" class="control-label"></label>
-                <input asp-for="BlogTitle" class="form-control" />
-                <span asp-validation-for="BlogTitle" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BlogAuthor" class="control-label"></label>
-                <input asp-for="BlogAuthor" class="form-control" />
-                <span asp-validation-for="BlogAuthor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BlogDescriptions" class="control-label"></label>
-                <input asp-for="BlogDescriptions" class="form-control" />
-                <span asp-validation-for="BlogDescriptions" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BlogCreatedate" class="control-label"></label>
-                <input asp-for="BlogCreatedate" class="form-control" />
-                <span asp-validation-for="BlogCreatedate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BlogCreateby" class="control-label"></label>
-                <input asp-for="BlogCreateby" class="form-control" />
-                <span asp-validation-for="BlogCreateby" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BlogImages" class="control-label"></label>
-                <input asp-for="BlogImages" class="form-control" />
-                <span asp-validation-for="BlogImages" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BlogModifydate" class="control-label"></label>
-                <input asp-for="BlogModifydate" class="form-control" />
-                <span asp-validation-for="BlogModifydate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BlogModifyby" class="control-label"></label>
-                <input asp-for="BlogModifyby" class="form-control" />
-                <span asp-validation-for="BlogModifyby" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BlogDetail" class="control-label"></label>
-                <input asp-for="BlogDetail" class="form-control" />
-                <span asp-validation-for="BlogDetail" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BlogBackLink" class="control-label"></label>
-                <input asp-for="BlogBackLink" class="form-control" />
-                <span asp-validation-for="BlogBackLink" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>*@
-
-
 <!-- Main content -->
 <section class="content">
 
@@ -86,12 +15,12 @@
                 <header class="panel-heading">
                     Add Blog
                 </header>
-                @using (Html.BeginForm("Edit", "EditBlogAdmin", FormMethod.Post))
+                @using (Html.BeginForm("EditBlog", "Admin", FormMethod.Post))
                 {
                     @Html.AntiForgeryToken()
                     <div class="panel-body">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <input type="hidden" asp-for="BlogId" value="@ViewBag.blog.BlogId" />
+                        <input type="hidden" asp-for="BlogId" name="BlogId" value="@ViewBag.blog.BlogId" />
                         <input type="hidden" asp-for="BlogCreatedate" value="@ViewBag.blog.BlogCreatedate" />
                         <div class="form-group">
                             <label asp-for="BlogTitle" class="control-label"></label>
@@ -100,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="BlogAuthor" class="control-label"></label>
-                            <input asp-for="BlogAuthor" class="form-control" value="@ViewBag.blog.BlogAuthor" disabled/>
+                            <input asp-for="BlogAuthor" class="form-control" value="@ViewBag.blog.BlogAuthor"/>
                             <span asp-validation-for="BlogAuthor" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -115,7 +44,7 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="BlogCreateby" class="control-label"></label>
-                            <input asp-for="BlogCreateby" class="form-control" value="@ViewBag.blog.BlogCreateby" disabled />
+                            <input asp-for="BlogCreateby" class="form-control" value="@ViewBag.blog.BlogCreateby"/>
                             <span asp-validation-for="BlogCreateby" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -127,17 +56,18 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="BlogModifydate" class="control-label"></label>
-                            <input asp-for="BlogModifydate" class="form-control" />
+                            <input asp-for="BlogModifydate" class="form-control" value="@ViewBag.blog.BlogModifydate" />
                             <span asp-validation-for="BlogModifydate" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="BlogModifyby" class="control-label"></label>
-                            <input asp-for="BlogModifyby" class="form-control" />
+                            <input asp-for="BlogModifyby" class="form-control" value="@ViewBag.blog.BlogModifyby" />
                             <span asp-validation-for="BlogModifyby" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="BlogDetail" class="control-label"></label>
-                            <textarea asp-for="BlogDetail" class="form-control" id="summernote" value="@Html.Raw(ViewBag.blog.BlogDetail)"></textarea>
+                            <input type="hidden" name="blogDetail"  value="@ViewBag.blog.BlogDetail">
+                            <textarea asp-for="BlogDetail" name="detail" class="form-control" id="summernote" value="@Html.Raw(ViewBag.blog.BlogDetail)"></textarea>
                             <span asp-validation-for="BlogDetail" class="text-danger"></span>
                         </div>
                         <div class="form-group">

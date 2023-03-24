@@ -34,7 +34,7 @@ namespace ProjectPRN221.Controllers
                 lstProduct = lstProduct.Where(x => x.ProductName.Contains(search)).ToList().ToPagedList(page, pageSize);
             }
 
-            lstProduct = lstProduct.OrderByDescending(x => x.ProductCreateDate).ToList().ToPagedList(page, pageSize);
+            //lstProduct = lstProduct.OrderByDescending(x => x.ProductCreateDate).ToList().ToPagedList(page, pageSize);
 
             ViewBag.lstProduct = lstProduct;
             ViewBag.lstColor = lstColor;
@@ -130,7 +130,7 @@ namespace ProjectPRN221.Controllers
             {
                 lstBlog = lstBlog.Where(x => x.BlogTitle.ToLower().Contains(search.ToLower())).ToList().ToPagedList(page, pageSize);
             }
-            lstBlog = lstBlog.OrderByDescending(x => x.BlogCreatedate).ToList().ToPagedList(page, pageSize);
+            //lstBlog = lstBlog.OrderByDescending(x => x.BlogCreatedate).ToList().ToPagedList(page, pageSize);
             ViewBag.lstBlog = lstBlog;
             ViewBag.cate = "Blogs";
             return View();
@@ -165,13 +165,28 @@ namespace ProjectPRN221.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public IActionResult EditBlog(Blog blog)
+        public IActionResult EditBlog(int BlogId, string img, string detail, string blogDetail, Blog blog)
         {
+            
+            if (img != null)
+            {
+                blog.BlogImages = img;
+            }
+
+            if (detail == null)
+            {
+                blog.BlogDetail = blogDetail;
+            }
+
             if (!ModelState.IsValid)
             {
+                var bl = shopDB.Blogs.FirstOrDefault(x => x.BlogId == BlogId);
+                ViewBag.blog = bl;
                 return View("EditBlog");
             }
-            return RedirectToAction("EditBog");
+            shopDB.Entry(blog).State = EntityState.Modified;
+            shopDB.SaveChanges();
+            return RedirectToAction("Bog");
         }
 
         public IActionResult DeleteBlog(int Id)
