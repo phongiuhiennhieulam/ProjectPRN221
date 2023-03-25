@@ -29,5 +29,6 @@ namespace ProjectPRN221.Models
         public virtual Color Color { get; set; }
         public virtual StatusProduct StatusProduct { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+
     }
 }

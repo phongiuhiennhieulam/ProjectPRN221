@@ -1,0 +1,400 @@
+﻿@{
+    Layout = "";
+}
+
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Mvc.Common
+@using X.PagedList;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | E-Shopper</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/css/price-range.css" rel="stylesheet">
+    <link href="~/css/animate.css" rel="stylesheet">
+
+    <link href="~/css/main.css" rel="stylesheet">
+    <link href="~/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="~/Content/js/html5shiv.js"></script>
+    <script src="~/Content/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="~/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;1,800&display=swap" rel="stylesheet">
+    <style>
+        @@media only screen {
+            .media-object {
+                width: 210px;
+                height: 200px;
+            }
+        }
+    </style>
+</head><!--/head-->
+
+
+<body>
+    <header id="header">
+        <!--header-->
+        <div class="header_top">
+            <!--header_top-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="contactinfo">
+                            <ul class="nav nav-pills">
+                                <li><a href="#"><i class="fa fa-phone"></i> +84 393 767 515</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> hoalac@domain.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="social-icons pull-right">
+                            <ul class="nav navbar-nav">
+                                <li><a href="https://www.facebook.com/batmann2112/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header_top-->
+
+        <div class="header-middle">
+            <!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo pull-left">
+                            <a href="@Url.Action("Index","ListHome")">
+                                <img src="~/images/home/logo.png" style="background-color:white" />
+                            </a>
+
+                        </div>
+                        <div class="btn-group pull-right">
+                            @*<div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                            USA
+                            <span class="caret"></span>
+                            </button>
+                            </div>*@
+
+                            @*<div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                            DOLLAR
+                            <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                            <li><a href="#">Canadian Dollar</a></li>
+                            <li><a href="#">Pound</a></li>
+                            </ul>
+                            </div>*@
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav">
+                                @*<li><a href="/UserAdmin/Index"><i class="fa fa-user"></i> Account</a></li>*@
+                                <li><a href="~/Cart/Index"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li><a href="/UserAdmin/Index"><i class="fa fa-user"></i> Account</a></li>
+                                    <li><a href="@Url.Action("Logout","Login")"><i class="fa fa-lock"></i>Logout</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="@Url.Action("Login","Login")"><i class="fa fa-lock"></i> Login</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-middle-->
+
+        <div class="header-bottom">
+            <!--header-bottom-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="mainmenu pull-left">
+                            <ul class="nav navbar-nav collapse navbar-collapse">
+                                <li><a href="@Url.Action("ProductHome","Product")" class="active">Home</a></li>
+                                <li><a href="@Url.Action("Index","PageProduct")">Product All</a></li>
+
+
+
+
+                                <li>
+                                    <a href="@Url.Action("Index","Blog")">Blog</a>
+
+                                </li>
+                                <li><a href="@Url.Action("Index","AboutUs")">About Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    @using (Html.BeginForm("SearchProduct", "Product", FormMethod.Get))
+                    {
+                        <div class="col-sm-3">
+                            <div class="search_box pull-right">
+                                <input type="search" name="search" placeholder="Search" onchange="myFunction(this.value)" />
+                            </div>
+                        </div>
+                    }
+
+                    @*@using (Html.BeginForm("Index", "ListHome", FormMethod.Get))
+                    {
+                    <div class="col-sm-3">
+                    <div class="search_box pull-right">
+                    @Html.TextBox("search",null,(new { @placeholder = "Search" }))
+                    </div>
+                    </div>
+                    }*@
+
+                </div><!--/header-bottom-->
+            </div>
+        </div>
+    </header><!--/header-->
+
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="left-sidebar">
+                        <h2>Category</h2>
+                        <div class="panel-group category-products" id="accordian">
+                            <!--category-productsr-->
+                            @foreach (var item in ViewBag.listCategory)
+                            {
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            @*<a href="#">@item.category_name</a>*@
+                                            @*<p> @Html.ActionLink(item.category_name, "Index", "Category", new { Id = item.category_id }, null)</p>*@
+                                            <p> <a href="/Product/ProductByCategory?Id=@item.CategoryId"> @item.CategoryName</a> </p>
+                                        </h4>
+                                    </div>
+                                </div>
+                            }
+
+                        </div><!--/category-products-->
+
+                        <div class="brands_products">
+                            <!--brands_products-->
+                            <h2>Brands</h2>
+                            <div class="brands-name">
+                                @foreach (var item in ViewBag.listColor)
+                                {
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li> <p> <a href="/Product/ProductByColor?Id=@item.ColorId"> @item.ColorName</a> </p></li>
+
+                                    </ul>
+                                }
+
+                            </div>
+                        </div><!--/brands_products-->
+
+
+
+                        <div class="shipping text-center">
+                            <!--shipping-->
+                            <img src="~/images/home/shipping.jpg" alt="" />
+                        </div><!--/shipping-->
+
+                    </div>
+                </div>
+
+                <div class="col-sm-9 padding-right">
+                    <div class="features_items">
+                        <!--features_items-->
+                        <h2 class="title text-center">Features Items</h2>
+                        @foreach (var item in ViewBag.listProductByCate)
+                        {
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img class="media-object" src="~/images/product-details/product/@item.ProductImage" />
+                                            <h2>@item.ProductPrice</h2>
+                                            <a href="/Product/ProductDetail?Id=@item.ProductId"> <p> @item.ProductName </p></a>
+                                            @*                                            <p><h2>@Html.ActionLink(item.ProductName, "ProductHome", "Product", new { id = item.ProductId }, new { @style = "font-family: 'nunito', sans-serif ; font-size: 16px ; color:black" href="javascript:void(0)" })</h2></p>
+                                        *@                                                <a href="@*/Cart/AddItem?productId=@item.product_id&quantity=1*@" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        </div>
+                                        <div class="product-overlay">
+                                            <div class="overlay-content">
+                                                <h2>@item.ProductPrice</h2>
+                                                <h2>@*@Html.ActionLink(item.product_name, "Index", "Product", new { Id = item.product_id }, new { @style = "font-family: 'Nunito', sans-serif ; font-size: 16px ; color:black" })*@</h2>
+                                                <a href="@*/Cart/AddItem?productId=@item.product_id&quantity=1*@" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="choose">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        @*                        @Html.PagedListPager((IPagedList)Model.listProduct, page => Url.Action("ProductHome", new { page }))
+                        *@
+
+
+                    </div><!--features_items-->
+
+                    <div class="category-tab">
+                        <!--category-tab-->
+                        <div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tshirt" data-toggle="tab">Ban Chay</a></li>
+                                <li><a href="#blazers" data-toggle="tab">Khuyen Mai</a></li>
+                                @*<li><a href="#sunglass" data-toggle="tab">Sunglass</a></li>
+                                <li><a href="#kids" data-toggle="tab">Kids</a></li>
+                                <li><a href="#poloshirt" data-toggle="tab">Polo shirt</a></li>*@
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active in" id="tshirt">
+                                @foreach (var item in ViewBag.listPrecomment)
+                                {
+
+
+                                    <div class="col-sm-3">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img class="media-object" src="~/images/product-details/product/@item.ProductImage" />
+                                                    <h2>@item.ProductPrice $</h2>
+                                                    <h2>@*@Html.ActionLink(item.product_name, "Index", "Product", new { Id = item.product_id }, new { @style = "font-family: 'Nunito', sans-serif ; font-size: 16px ; color:black" })*@ </h2>
+                                                    <a href="@*/Cart/AddItem?productId=@item.product_id&quantity=1*@" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+
+                            <div class="tab-pane fade" id="blazers">
+                                @foreach (var item in ViewBag.listPrecomment)
+                                {
+                                    <div class="col-sm-3">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img class="media-object" src="~/images/product-details/product/@item.ProductImage" />
+
+                                                    @*<img src="~/Content/images/home/Converse Chuck Taylor II.jpg" alt="" />*@
+                                                    <h2>@item.ProductPrice $</h2>
+                                                    <a href="/Product/ProductDetail?Id=@item.ProductId"> <p> @item.ProductName </p></a>
+                                                    <h2>@*@Html.ActionLink(item.product_name, "Index", "Product", new { Id = item.product_id }, new { @style = "font-family: 'Nunito', sans-serif ; font-size: 16px ; color:black" }) *@</h2>
+                                                    <a href="@*/Cart/AddItem?productId=@item.product_id&quantity=1*@" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+
+
+                        </div>
+                    </div><!--/category-tab-->
+
+                    <div class="recommended_items">
+                        <!--recommended_items-->
+
+
+                        <h2 class="title text-center">recommended items</h2>
+
+                        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    @foreach (var item in ViewBag.listPrecomment)
+                                    {
+
+
+                                        <div class="col-sm-4">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        <img class="media-object" src="~/images/product-details/product/@item.ProductImage" />
+                                                        @*<img src="~/Content/images/home/Converse Chuck Taylor II.jpg" alt="" />*@
+                                                        <h2>@item.ProductPrice $</h2>
+                                                        <a href="/Product/ProductDetail?Id=@item.ProductId"> <p> @item.ProductName </p></a>
+                                                        <h2>@*@Html.ActionLink(item.product_name, "Index", "Product", new { Id = item.product_id }, new { @style = "font-family: 'Nunito', sans-serif ; font-size: 16px ; color:black" })*@</h2>
+                                                        <a href="@*/Cart/AddItem?productId=@item.product_id&quantity=1*@" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="item">
+                                    @foreach (var item in ViewBag.listPrecomment)
+                                    {
+
+
+                                        <div class="col-sm-4">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        <img class="media-object" src="~/images/product-details/product/@item.ProductImage" alt="" />
+                                                        <h2>@item.ProductPrice $</h2>
+                                                        <a href="/Product/ProductDetail?Id=@item.ProductId"> <p> @item.ProductName </p></a>
+                                                        <h2>@*@Html.ActionLink(item.product_name, "Index", "Product", new { Id = item.product_id }, new { @style = "font-family: 'Nunito', sans-serif ; font-size: 16px ; color:black" })*@</h2>
+                                                        <a href="@*/Cart/AddItem?productId=@item.product_id&quantity=1*@" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!--/recommended_items-->
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/jquery.scrollUp.min.js"></script>
+
+    <script src="~/Content/js/price-range.js"></script>
+    <script src="~/Content/js/jquery.prettyPhoto.js"></script>
+    <script src="~/Content/js/main.js"></script>
+</body>
+</html>
