@@ -28,7 +28,7 @@
                                 <li>
                                     <div class="task-title">
                                         <span class="task-title-sp">@slide.SlideTitle</span>
-                                        <span class="label label-success">@slide.SlideCreatedate</span>
+                                        <span class="label label-success">@String.Format("{0:dd/MM/yyyy}", slide.SlideCreatedate)</span>
                                         <div class="pull-right hidden-phone">
                                             <a href="~/Admin/DeleteActive?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
                                         </div>
@@ -59,18 +59,13 @@
                             @foreach (var slide in ViewBag.lstSlide)
                             {
                                 <li>
-                                    <!--<div class="task-checkbox">-->
-                                    <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                    <!--<input type="checkbox" class="flat-grey list-child" />-->
-                                    <!-- <input type="checkbox" class="square-grey"/> -->
-                                    <!--</div>-->
                                     <div class="task-title">
                                         <span class="task-title-sp">@slide.SlideTitle</span>
-                                        <span class="label label-success">@slide.SlideCreatedate</span>
+                                        <span class="label label-success">@String.Format("{0:dd/MM/yyyy}", slide.SlideCreatedate)</span>
                                         
                                             <div class="pull-right hidden-phone">
                                                 <a href="~/Admin/InsertActive?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button></a>
-                                                <a href="~/Admin/SlideNeedEdit?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                                <a href="~/Admin/EditSlide?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
                                                 <a href="~/Admin/Delete?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
                                             </div>
                                         

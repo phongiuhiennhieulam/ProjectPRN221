@@ -24,6 +24,16 @@
                         <input type="submit" class="btn btn-primary" value="Search" />
                     </div>
                 }
+                @if (ViewBag.mess != null)
+                {
+                    <div class="alert alert-success">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>Well done!</strong> @ViewBag.mess
+                    </div>
+                }
+               
                 <div class="panel-body">
 
                     <div class="task-content">
@@ -34,13 +44,10 @@
                                 <li>
                                     <div class="task-title">
                                         <span class="task-title-sp">@blog.BlogTitle</span>
-                                        <span class="label label-success">@blog.BlogCreatedate</span>
+                                        <span class="label label-success">@String.Format("{0:dd/MM/yyyy}", blog.BlogCreatedate)</span>
                                         <div class="pull-right hidden-phone">
-                                           
-                                                @*<a href="#"><button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button></a>*@
-                                            <a href="/EditBlogAdmin/Index?Id=@blog.BlogId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
-                                            <a href="/EditBlogAdmin/Delete?Id=@blog.BlogId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
-                                            
+                                            <a href="/Admin/EditBlog?Id=@blog.BlogId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                            <a href="/Admin/DeleteBlog?Id=@blog.BlogId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
                                         </div>
                                     </div>
                                 </li>
@@ -48,12 +55,10 @@
                             @Html.PagedListPager((IPagedList)ViewBag.lstBlog, page => Url.Action("Blog", new { page }))
                         </ul>
                     </div>
-                    @if (User.IsInRole("Marketing"))
-                    {
-                        <div class=" add-task-row">
-                            <a class="btn btn-success btn-sm pull-left" href="/AddBlogAdmin/Index">Add New Blog</a>
-                        </div>
-                    }
+                    <div class=" add-task-row">
+                        <a class="btn btn-success btn-sm pull-left" href="/Admin/AddBlog">Add New Blog</a>
+                    </div>
+
                 </div>
             </section>
         </div>

@@ -169,6 +169,7 @@ E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\o
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Completed.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Cancelled.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Account.cshtml.g.cs
+<<<<<<< HEAD
 C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\appsettings.json
 C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ProjectPRN221.exe
@@ -348,3 +349,17 @@ C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\ne
 C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\SearchProduct.cshtml.g.cs
 C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\Blog.cshtml.g.cs
 C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\BlogDetail.cshtml.g.cs
+=======
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddBlog.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddSlide.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditSlide.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\ViewOrderMember.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\SummerNote.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditBlog.cshtml.g.cs
+>>>>>>> ff5d97ecf42348872f651f2a93e5a77155a766e7
+C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddBlog.cshtml.g.cs
+C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddSlide.cshtml.g.cs
+C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditBlog.cshtml.g.cs
+C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditSlide.cshtml.g.cs
+C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\SummerNote.cshtml.g.cs
+C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\ViewOrderMember.cshtml.g.cs

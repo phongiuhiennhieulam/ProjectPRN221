@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "ViewOrderMember";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Mvc.Common
+@using X.PagedList;
+<div class="row">
+    <div class="col-md-12">
+        <section class="panel">
+            <header class="panel-heading">
+                List Order
+            </header>
+            <div class="panel-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>ProductName</th>
+                            <th>Amount</th>
+                            <th>Price</th>
+                            <th>StatusOrder</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.lstOrder)
+                        {
+                            
+                            @if (item.AccountId == ViewBag.member.AccountId)
+                            {
+                              
+                                    @foreach (var i in ViewBag.lstOrderDetail)
+                                    {
+                                        @if (i.OrderId == item.OrderId)
+                                        {
+                                            @foreach (var j in ViewBag.lstProduct)
+                                            {
+                                                @if (j.ProductId == i.ProductId)
+                                                {
+                                                    <tr>
+                                                        <td><img class="media-object" src="~/images/product-details/product/@j.ProductImage" /></td>
+                                                        <td style="padding-top:40px">@j.ProductName</td>
+                                                        <td style="padding-top:40px">@i.OrderDetailsNum</td>
+                                                        <td style="padding-top:40px">@item.OrderTotalMoney</td>
+                                                        @foreach (var k in ViewBag.lstOrderStatus)
+                                                        {
+                                                            @if (k.OrderStatusId == item.OrderStatusId)
+                                                            {
+                                                                <td style="padding-top:40px">@k.OrderStatusStatus</td>
+                                                            }
+                                                    
+                                                         }
+                                                    </tr>
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }    
+                            } 
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            @*@Html.PagedListPager((IPagedList)ViewBag.lstProduct, page => Url.Action("Product", new { page }))*@
+
+        </section>
+        @if (ViewBag.member.AccountStatus == true)
+        {
+            <div class=" add-task-row">
+                <a class="btn btn-success btn-sm pull-left" href="/Admin/LockAccount?Id=@ViewBag.member.AccountId">Lock Account</a>
+            </div>
+        } else
+        {
+            <div class=" add-task-row">
+                <a class="btn btn-success btn-sm pull-left" href="/Admin/UnLockAccount?Id=@ViewBag.member.AccountId">UnLocck Account</a>
+            </div>
+        }
+
+    </div><!--end col-6 -->
+</div>
+<!-- row end -->
+            </section><!-- /.content -->
+<div class="footer-main">
+    Copyright &copy Director, 2022
+</div>

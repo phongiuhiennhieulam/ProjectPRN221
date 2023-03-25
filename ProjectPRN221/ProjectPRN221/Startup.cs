@@ -25,10 +25,12 @@ namespace ProjectPRN221
         {
             services.AddControllersWithViews();
             services.AddDistributedMemoryCache();
-            services.AddSession((option) =>
+
+            services.AddSession(options =>
             {
-                option.Cookie.Name = "ID";
-                option.IdleTimeout = new TimeSpan(0, 30, 0);
+                options.IdleTimeout = TimeSpan.FromSeconds(100);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
             });
         }
 
@@ -49,6 +51,7 @@ namespace ProjectPRN221
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
 
