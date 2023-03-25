@@ -166,10 +166,81 @@ namespace ProjectPRN221.Controllers
             }
         }
 
+        public IActionResult SeftAccount()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 1)
+                {
+                    var a = shopDB.Accounts.FirstOrDefault(x => x.AccountId == 1);
+                    ViewBag.acc = a;
+                    return View();
+                }
+                return RedirectToAction("", "");
+            }
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult SeftAccount(string img, string AccountImage, Account account)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 1)
+                {
+                    if (!ModelState.IsValid)
+                    {
+                        ViewBag.acc = acc;
+                        return View("SeftAccount");
+                    }
+
+                    if (AccountImage == null)
+                    {
+                        account.AccountImage = img;
+                    }
+
+                    account.AccountRoleId = 1;
+                    shopDB.Entry(account).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    shopDB.SaveChanges();
+                    return RedirectToAction("ToPay", "User");
+                }
+                return RedirectToAction("", "");
+            }
+        }
         public IActionResult ReOrder(int Id)
         {
-            
-            return View();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 1)
+                {
+                    Cart cart = new Cart
+                    {
+
+                    };
+
+                    CartDetail cartDetail = new CartDetail
+                    {
+
+                    };
+                    return RedirectToAction("", "");
+                }
+                return RedirectToAction("", "");
+            }
         }
 
         public IActionResult ContactTo()

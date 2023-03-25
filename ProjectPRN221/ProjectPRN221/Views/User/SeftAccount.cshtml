@@ -1,0 +1,160 @@
+﻿@model ProjectPRN221.Models.Account
+
+@{
+    ViewData["Title"] = "SeftAccount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h1>SeftAccount</h1>
+
+<h4>Account</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SeftAccount">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AccountId" />
+            <div class="form-group">
+                <label asp-for="AccountUsername" class="control-label"></label>
+                <input asp-for="AccountUsername" class="form-control" />
+                <span asp-validation-for="AccountUsername" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountPassword" class="control-label"></label>
+                <input asp-for="AccountPassword" class="form-control" />
+                <span asp-validation-for="AccountPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountEmail" class="control-label"></label>
+                <input asp-for="AccountEmail" class="form-control" />
+                <span asp-validation-for="AccountEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountName" class="control-label"></label>
+                <input asp-for="AccountName" class="form-control" />
+                <span asp-validation-for="AccountName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountPhone" class="control-label"></label>
+                <input asp-for="AccountPhone" class="form-control" />
+                <span asp-validation-for="AccountPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountAddress" class="control-label"></label>
+                <input asp-for="AccountAddress" class="form-control" />
+                <span asp-validation-for="AccountAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountRoleId" class="control-label"></label>
+                <select asp-for="AccountRoleId" class="form-control" asp-items="ViewBag.AccountRoleId"></select>
+                <span asp-validation-for="AccountRoleId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountGender" class="control-label"></label>
+                <input asp-for="AccountGender" class="form-control" />
+                <span asp-validation-for="AccountGender" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="AccountStatus" /> @Html.DisplayNameFor(model => model.AccountStatus)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountCreatedate" class="control-label"></label>
+                <input asp-for="AccountCreatedate" class="form-control" />
+                <span asp-validation-for="AccountCreatedate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountImage" class="control-label"></label>
+                <input asp-for="AccountImage" class="form-control" />
+                <span asp-validation-for="AccountImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountDob" class="control-label"></label>
+                <input asp-for="AccountDob" class="form-control" />
+                <span asp-validation-for="AccountDob" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+<section class="content">
+
+    <!-- Main row -->
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel tasks-widget">
+                <header class="panel-heading">
+                    Add New Customer
+                </header>
+                @using (Html.BeginForm("SeftAccount", "User", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                        <div class="panel-body">
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="AccountId" value="@ViewBag.acc.AccountId" />
+                            <div class="form-group">
+                                <label asp-for="AccountUsername" class="control-label"></label>
+                                <input asp-for="AccountUsername" class="form-control" value="@ViewBag.acc.AccountUsername" />
+                                <span asp-validation-for="AccountUsername" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AccountPassword" class="control-label"></label>
+                                <input asp-for="AccountPassword" class="form-control" value="@ViewBag.acc.AccountPassword" />
+                                <span asp-validation-for="AccountPassword" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AccountEmail" class="control-label"></label>
+                                <input asp-for="AccountEmail" class="form-control" value="@ViewBag.acc.AccountEmail" />
+                                <span asp-validation-for="AccountEmail" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AccountName" class="control-label"></label>
+                                <input asp-for="AccountName" class="form-control" value="@ViewBag.acc.AccountName" />
+                                <span asp-validation-for="AccountName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AccountPhone" class="control-label"></label>
+                                <input asp-for="AccountPhone" class="form-control" value="@ViewBag.acc.AccountPhone" />
+                                <span asp-validation-for="AccountPhone" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AccountAddress" class="control-label"></label>
+                                <input asp-for="AccountAddress" class="form-control" value="@ViewBag.acc.AccountAddress" />
+                                <span asp-validation-for="AccountAddress" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="AccountCreatedate" class="control-label"></label>
+                                <input asp-for="AccountCreatedate" type="datetime" class="form-control" value="@ViewBag.acc.AccountCreatedate" />
+                                <span asp-validation-for="AccountCreatedate" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AccountImage" class="control-label"></label>
+                                <img class="media-object" name="img" src="~/images/ava/@ViewBag.acc.AccountImage" />
+                                <input type="file" asp-for="AccountImage" class="form-control" value="@ViewBag.acc.AccountImage" />
+                                <span asp-validation-for="AccountImage" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AccountDob" class="control-label"></label>
+                                <input asp-for="AccountDob" type="datetime" class="form-control" value="@ViewBag.acc.AccountDob" />
+                                <span asp-validation-for="AccountDob" class="text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn btn-info" onclick="alert(confirm('Bạn có muốn tiếp tục sửa thông tin?'))">Save</button>
+                        </div>
+                }
+            </section>
+        </div>
+    </div>
+    <div class="footer-main">
+        Copyright &copy Director, 2022
+    </div>
+</section>

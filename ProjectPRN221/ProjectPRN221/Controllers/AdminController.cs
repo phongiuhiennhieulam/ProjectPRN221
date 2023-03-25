@@ -810,6 +810,58 @@ namespace ProjectPRN221.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult SeftAccount()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    ViewBag.acc = acc;
+                    return View();
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult SeftAccount(string img, string AccountImage, Account account)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    if (!ModelState.IsValid)
+                    {
+
+                        ViewBag.acc = acc;
+                        return View("SeftAccount");
+                    }
+
+                    if (AccountImage == null)
+                    {
+                        account.AccountImage = img;
+                    }
+
+                    account.AccountRoleId = 1;
+                    shopDB.Entry(account).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    shopDB.SaveChanges();
+                    return View();
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
+        }
+
         public IActionResult SummerNote()
         {
             return View();
