@@ -24,6 +24,16 @@
                         <input type="submit" class="btn btn-primary" value="Search" />
                     </div>
                 }
+                @if (ViewBag.mess != null)
+                {
+                    <div class="alert alert-success">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>Well done!</strong> @ViewBag.mess
+                    </div>
+                }
+               
                 <div class="panel-body">
 
                     <div class="task-content">
