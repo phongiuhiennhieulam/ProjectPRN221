@@ -20,6 +20,15 @@
                 <header class="panel-heading">
                     List Customer
                 </header>
+                @if (ViewBag.messC != null)
+                {
+                    <div class="alert alert-success">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>Well done!</strong> @ViewBag.messC
+                    </div>
+                }
                 @using (Html.BeginForm("Customer", "Admin", FormMethod.Get))
                 {
                     <div class="input-group">
@@ -62,8 +71,8 @@
                                         <td>
                                             <div class="pull-right hidden-phone">
                                             <a href="~/Admin/ViewOrderMember?Id=@item.AccountId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
-                                            <a href="/Admin/UnLockAccount?Id=@item.AccountId"><button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button></a>
-                                            <a href="/Admin/LockAccount?Id=@item.AccountId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                            <a href="/Admin/UnLockAccount?Id=@item.AccountId" onclick="alert(confirm('Bạn có muốn mở khóa người dùng?'))"><button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button></a>
+                                            <a href="/Admin/LockAccount?Id=@item.AccountId" onclick="alert(confirm('Bạn có muốn khóa người dùng?'))"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
                                             </div>
                                         </td>
                                     

@@ -66,7 +66,7 @@
                                             <div class="pull-right hidden-phone">
                                                 <a href="~/Admin/InsertActive?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button></a>
                                                 <a href="~/Admin/EditSlide?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
-                                                <a href="~/Admin/Delete?Id=@slide.SlideId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                            <a href="~/Admin/Delete?Id=@slide.SlideId" onclick="alert(confirm('Bạn có muốn xóa slide?'))"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
                                             </div>
                                         
                                     </div>

@@ -47,7 +47,7 @@
                                         <span class="label label-success">@String.Format("{0:dd/MM/yyyy}", blog.BlogCreatedate)</span>
                                         <div class="pull-right hidden-phone">
                                             <a href="/Admin/EditBlog?Id=@blog.BlogId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
-                                            <a href="/Admin/DeleteBlog?Id=@blog.BlogId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                            <a href="/Admin/DeleteBlog?Id=@blog.BlogId" onclick="alert(confirm('Bạn có muốn xóa blog?'))"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
                                         </div>
                                     </div>
                                 </li>

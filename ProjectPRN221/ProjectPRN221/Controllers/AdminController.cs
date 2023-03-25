@@ -61,14 +61,17 @@ namespace ProjectPRN221.Controllers
                     if (HttpContext.Session.GetString("product") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("product");
+                        HttpContext.Session.SetString("product", null);
                     }
                     if (HttpContext.Session.GetString("editpro") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("editpro");
+                        HttpContext.Session.SetString("editpro", null);
                     }
                     if (HttpContext.Session.GetString("delepro") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("delepro");
+                        HttpContext.Session.SetString("delepro", null);
                     }
                     return View();
                 }
@@ -244,10 +247,12 @@ namespace ProjectPRN221.Controllers
                     if (HttpContext.Session.GetString("editblog") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("editblog");
+                        HttpContext.Session.SetString("editblog", null);
                     }
                     if (HttpContext.Session.GetString("deleblog") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("deleblog");
+                        HttpContext.Session.SetString("deleblog", null);
                     }
                     ViewBag.cate = "Blogs";
                     return View();
@@ -600,6 +605,11 @@ namespace ProjectPRN221.Controllers
                     ViewBag.lstCustomer = lstCustomer;
                     ViewBag.search = search;
                     ViewBag.cate = "Customers";
+                    if (HttpContext.Session.GetString("add") != null)
+                    {
+                        ViewBag.messC = HttpContext.Session.GetString("add");
+                        HttpContext.Session.SetString("add", null);
+                    }
                     return View();
                 }
                 return RedirectToAction("ProductHome", "Product");
@@ -673,6 +683,51 @@ namespace ProjectPRN221.Controllers
                     ViewBag.lstOrderDetail = shopDB.OrderDetails.ToList();
                     ViewBag.lstOrderStatus = shopDB.OrderStatuses.ToList();
                     return View();
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
+        }
+
+        public IActionResult AddCustomer()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    return View();
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult AddCustomer(Account account)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    if (!ModelState.IsValid)
+                    {
+                        return View("AddCustomer");
+                    }
+                    account.AccountStatus = true;
+                    account.AccountRoleId = 1;
+                    shopDB.Accounts.Add(account);
+                    shopDB.SaveChanges();
+                    HttpContext.Session.SetString("add", "Add new customer successfull!");
+                    return RedirectToAction("Customer");
                 }
                 return RedirectToAction("ProductHome", "Product");
             }

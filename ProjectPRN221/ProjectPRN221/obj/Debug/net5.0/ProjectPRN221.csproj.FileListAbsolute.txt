@@ -9,80 +9,7 @@ E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\b
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ProjectPRN221.Views.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ProjectPRN221.Views.pdb
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Humanizer.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Identity.Client.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Newtonsoft.Json.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Runtime.Caching.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.csproj.AssemblyReference.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.GeneratedMSBuildEditorConfig.editorconfig
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.AssemblyInfoInputs.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.AssemblyInfo.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.csproj.CoreCompileInputs.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.MvcApplicationPartsAssemblyInfo.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorAssemblyInfo.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorAssemblyInfo.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\scopedcss\bundle\ProjectPRN221.styles.css
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\ProjectPRN221.StaticWebAssets.Manifest.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\ProjectPRN221.StaticWebAssets.Pack.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.ProjectPRN221.Microsoft.AspNetCore.StaticWebAssets.props
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.build.ProjectPRN221.props
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.ProjectPRN221.props
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.ProjectPRN221.props
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.TagHelpers.input.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.TagHelpers.output.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorCoreGenerate.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorTargetAssemblyInfo.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorTargetAssemblyInfo.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.Views.pdb
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.csproj.CopyComplete
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\refint\ProjectPRN221.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.pdb
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.genruntimeconfig.cache
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ref\ProjectPRN221.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Product.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.Mvc.Common.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.MvcApplicationPartsAssemblyInfo.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
@@ -90,6 +17,21 @@ E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\b
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -98,11 +40,21 @@ E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\b
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Newtonsoft.Json.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Composition.AttributedModel.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Composition.Convention.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Composition.Hosting.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Composition.Runtime.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Composition.TypedParts.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Runtime.Caching.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.Mvc.Common.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -155,214 +107,54 @@ E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\b
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Blog.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddProduct.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Slide.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Customer.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditProduct.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Order.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_Layout2.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\ToPay.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\ToReceive.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Completed.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Cancelled.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Account.cshtml.g.cs
-<<<<<<< HEAD
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\appsettings.json
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ProjectPRN221.exe
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ProjectPRN221.deps.json
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ProjectPRN221.runtimeconfig.json
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ProjectPRN221.runtimeconfig.dev.json
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ProjectPRN221.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ProjectPRN221.pdb
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ProjectPRN221.Views.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ProjectPRN221.Views.pdb
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Humanizer.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.Identity.Client.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\dotnet-aspnet-codegenerator-design.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Newtonsoft.Json.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Composition.AttributedModel.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Composition.Convention.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Composition.Hosting.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Composition.Runtime.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Composition.TypedParts.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Runtime.Caching.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.Mvc.Common.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.AssemblyInfo.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorAssemblyInfo.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorAssemblyInfo.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\scopedcss\bundle\ProjectPRN221.styles.css
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\ProjectPRN221.StaticWebAssets.Manifest.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\ProjectPRN221.StaticWebAssets.Pack.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.ProjectPRN221.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.build.ProjectPRN221.props
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.ProjectPRN221.props
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.ProjectPRN221.props
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.TagHelpers.input.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.TagHelpers.output.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorCoreGenerate.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddProduct.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Blog.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Customer.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditProduct.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Order.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Product.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Slide.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_Layout2.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Account.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Cancelled.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Completed.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\ToPay.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\ToReceive.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorTargetAssemblyInfo.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorTargetAssemblyInfo.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.Views.pdb
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.csproj.CopyComplete
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\refint\ProjectPRN221.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.pdb
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.genruntimeconfig.cache
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ref\ProjectPRN221.dll
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ProductHome.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_Layout3.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ProductByCategory.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ProductByColor.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ProductDetail.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\SearchProduct.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\Blog.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\BlogDetail.cshtml.g.cs
-=======
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.csproj.AssemblyReference.cache
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.GeneratedMSBuildEditorConfig.editorconfig
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.AssemblyInfoInputs.cache
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.AssemblyInfo.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.csproj.CoreCompileInputs.cache
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.MvcApplicationPartsAssemblyInfo.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.MvcApplicationPartsAssemblyInfo.cache
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorAssemblyInfo.cache
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorAssemblyInfo.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\scopedcss\bundle\ProjectPRN221.styles.css
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\ProjectPRN221.StaticWebAssets.Manifest.cache
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\ProjectPRN221.StaticWebAssets.Pack.cache
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.ProjectPRN221.Microsoft.AspNetCore.StaticWebAssets.props
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.build.ProjectPRN221.props
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.ProjectPRN221.props
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.ProjectPRN221.props
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.TagHelpers.input.cache
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.TagHelpers.output.cache
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorCoreGenerate.cache
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddBlog.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddProduct.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddSlide.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditSlide.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\ViewOrderMember.cshtml.g.cs
-E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\SummerNote.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Blog.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Customer.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditBlog.cshtml.g.cs
->>>>>>> ff5d97ecf42348872f651f2a93e5a77155a766e7
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddBlog.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddSlide.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditBlog.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditSlide.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\SummerNote.cshtml.g.cs
-C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\ViewOrderMember.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditProduct.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditSlide.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Order.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Product.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\Slide.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\SummerNote.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\ViewOrderMember.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\Blog.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\BlogDetail.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ProductByCategory.cshtml.g.cs
@@ -370,4 +162,25 @@ E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\o
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ProductDetail.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ProductHome.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\SearchProduct.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_Layout2.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_Layout3.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Account.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Cancelled.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\Completed.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\ToPay.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\ToReceive.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorTargetAssemblyInfo.cache
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.RazorTargetAssemblyInfo.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.Views.pdb
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.csproj.CopyComplete
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\refint\ProjectPRN221.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.pdb
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ProjectPRN221.genruntimeconfig.cache
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\ref\ProjectPRN221.dll
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddCustomer.cshtml.g.cs
