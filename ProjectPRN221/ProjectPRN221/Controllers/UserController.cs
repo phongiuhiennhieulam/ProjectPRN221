@@ -66,17 +66,29 @@ namespace ProjectPRN221.Controllers
         //Đăng giao
         public IActionResult ToReceive()
         {
-            var status = shopDB.OrderStatuses.FirstOrDefault(x => x.OrderStatusStatus == "Đang giao");
-            var lstToReceive = shopDB.Orders.Where(x => x.OrderStatusId == status.OrderStatusId).ToList();
-            var lstOrderDetail = shopDB.OrderDetails.ToList();
-            var lstProduct = shopDB.Products.ToList();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 1)
+                {
+                    var status = shopDB.OrderStatuses.FirstOrDefault(x => x.OrderStatusStatus == "Đang giao");
+                    var lstToReceive = shopDB.Orders.Where(x => x.OrderStatusId == status.OrderStatusId).ToList();
+                    var lstOrderDetail = shopDB.OrderDetails.ToList();
+                    var lstProduct = shopDB.Products.ToList();
 
-            ViewBag.lstProduct = lstProduct;
-            ViewBag.lstToReceive = lstToReceive;
-            ViewBag.lstOrderDetail = lstOrderDetail;
-            ViewBag.cate = "ToReceive";
+                    ViewBag.lstProduct = lstProduct;
+                    ViewBag.lstToReceive = lstToReceive;
+                    ViewBag.lstOrderDetail = lstOrderDetail;
+                    ViewBag.cate = "ToReceive";
 
-            return View();
+                    return View();
+                }
+                return RedirectToAction("", "");
+            }
         }
 
         //Đã giao hàng

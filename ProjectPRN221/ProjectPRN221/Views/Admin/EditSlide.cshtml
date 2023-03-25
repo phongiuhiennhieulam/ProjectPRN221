@@ -128,7 +128,7 @@
                             <input asp-for="SlideDescriptions" value="@ViewBag.slide.SlideDescriptions" class="form-control" />
                             <span asp-validation-for="SlideDescriptions" class="text-danger"></span>
                         </div>
-                        <button type="submit" class="btn btn-info">Edit Slide</button>
+                        <button type="submit" class="btn btn-info" onclick="alert(confirm('Bạn có muốn sửa slide?'))">Edit Slide</button>
                     </div>
                 }
             </section>

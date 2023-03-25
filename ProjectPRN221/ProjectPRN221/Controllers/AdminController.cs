@@ -190,20 +190,32 @@ namespace ProjectPRN221.Controllers
                     HttpContext.Session.SetString("editpro", "Edit product successfull");
                     return RedirectToAction("Product");
                 }
-                return RedirectToAction("", "");
+                return RedirectToAction("PrductHome", "Product");
             }
         }
 
         public IActionResult DeleteProduct(int Id)
         {
-            Product pro = shopDB.Products.FirstOrDefault(x => x.ProductId == Id);
-            if (pro != null)
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                shopDB.Products.Remove(pro);
-                shopDB.SaveChanges();
-                HttpContext.Session.SetString("delepro", "Delete product successfull");
+                return RedirectToAction("", "");
             }
-            return RedirectToAction("Product");
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    Product pro = shopDB.Products.FirstOrDefault(x => x.ProductId == Id);
+                    if (pro != null)
+                    {
+                        shopDB.Products.Remove(pro);
+                        shopDB.SaveChanges();
+                        HttpContext.Session.SetString("delepro", "Delete product successfull");
+                    }
+                    return RedirectToAction("Product");
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         public IActionResult Blog(string search, int page=1, int pageSize = 5)
@@ -240,7 +252,7 @@ namespace ProjectPRN221.Controllers
                     ViewBag.cate = "Blogs";
                     return View();
                 }
-                return RedirectToAction("", "");
+                return RedirectToAction("ProductHome", "Product");
             }
         }
 
@@ -258,7 +270,7 @@ namespace ProjectPRN221.Controllers
                     ViewBag.cate = "Blogs";
                     return View();
                 }
-                return RedirectToAction("", "");
+                return RedirectToAction("ProductHome", "Product");
             }
         }
 
@@ -266,59 +278,106 @@ namespace ProjectPRN221.Controllers
         [AutoValidateAntiforgeryToken]
         public IActionResult AddBlog(Blog blog)
         {
-            if (!ModelState.IsValid)
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return View("AddBlog");
+                return RedirectToAction("", "");
             }
-            shopDB.Blogs.Add(blog);
-            shopDB.SaveChanges();
-            HttpContext.Session.SetString("blog", "Add Blog Successfull!!!");
-            return RedirectToAction("Blog");
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    if (!ModelState.IsValid)
+                    {
+                        return View("AddBlog");
+                    }
+                    shopDB.Blogs.Add(blog);
+                    shopDB.SaveChanges();
+                    HttpContext.Session.SetString("blog", "Add Blog Successfull!!!");
+                    return RedirectToAction("Blog");
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         public IActionResult EditBlog(int Id)
         {
-            var blog = shopDB.Blogs.FirstOrDefault(x => x.BlogId == Id);
-            ViewBag.blog = blog;
-            ViewBag.cate = "Blogs";
-            return View();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    var blog = shopDB.Blogs.FirstOrDefault(x => x.BlogId == Id);
+                    ViewBag.blog = blog;
+                    ViewBag.cate = "Blogs";
+                    return View();
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public IActionResult EditBlog(int BlogId, string img, string detail, string blogDetail, Blog blog)
         {
-            
-            if (img != null)
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                blog.BlogImages = img;
+                return RedirectToAction("", "");
             }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    if (img != null)
+                    {
+                        blog.BlogImages = img;
+                    }
 
-            if (detail == null)
-            {
-                blog.BlogDetail = blogDetail;
-            }
+                    if (detail == null)
+                    {
+                        blog.BlogDetail = blogDetail;
+                    }
 
-            if (!ModelState.IsValid)
-            {
-                var bl = shopDB.Blogs.FirstOrDefault(x => x.BlogId == BlogId);
-                ViewBag.blog = bl;
-                return View("EditBlog");
+                    if (!ModelState.IsValid)
+                    {
+                        var bl = shopDB.Blogs.FirstOrDefault(x => x.BlogId == BlogId);
+                        ViewBag.blog = bl;
+                        return View("EditBlog");
+                    }
+                    shopDB.Entry(blog).State = EntityState.Modified;
+                    shopDB.SaveChanges();
+                    HttpContext.Session.SetString("editblog", "Edit blog successfull!!!");
+                    return RedirectToAction("Bog");
+                }
+                return RedirectToAction("ProductHome", "Product");
             }
-            shopDB.Entry(blog).State = EntityState.Modified;
-            shopDB.SaveChanges();
-            HttpContext.Session.SetString("editblog", "Edit blog successfull!!!");
-            return RedirectToAction("Bog");
         }
 
         public IActionResult DeleteBlog(int Id)
         {
-            var blog = shopDB.Blogs.FirstOrDefault(x => x.BlogId == Id);
-            shopDB.Blogs.Remove(blog);
-            shopDB.SaveChanges();
-            ViewBag.cate = "Blogs";
-            HttpContext.Session.SetString("deleblog", "Delete blog successfull!!!");
-            return RedirectToAction("Blog");
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    var blog = shopDB.Blogs.FirstOrDefault(x => x.BlogId == Id);
+                    shopDB.Blogs.Remove(blog);
+                    shopDB.SaveChanges();
+                    ViewBag.cate = "Blogs";
+                    HttpContext.Session.SetString("deleblog", "Delete blog successfull!!!");
+                    return RedirectToAction("Blog");
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         public IActionResult Slide(string search, int page = 1, int pageSize = 5)
@@ -347,35 +406,59 @@ namespace ProjectPRN221.Controllers
                     ViewBag.cate = "Slides";
                     return View();
                 }
-                return RedirectToAction("", "");
+                return RedirectToAction("ProductHome", "Product");
             }
         }
 
         public IActionResult InsertActive(int Id)
         {
-            Slide slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
-            if (slide != null)
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                slide.SlideStatusId = true;
-                shopDB.Entry(slide).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                shopDB.SaveChanges();
+                return RedirectToAction("", "");
             }
-            
-            ViewBag.cate = "Slides";
-            return RedirectToAction("Slide");
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    Slide slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
+                    if (slide != null)
+                    {
+                        slide.SlideStatusId = true;
+                        shopDB.Entry(slide).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                        shopDB.SaveChanges();
+                    }
+
+                    ViewBag.cate = "Slides";
+                    return RedirectToAction("Slide");
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         public IActionResult DeleteActive(int Id)
         {
-            Slide slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
-            if (slide != null)
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                slide.SlideStatusId = false;
-                shopDB.Entry(slide).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                shopDB.SaveChanges();
-            }  
-            ViewBag.cate = "Slides";
-            return RedirectToAction("Slide");
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    Slide slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
+                    if (slide != null)
+                    {
+                        slide.SlideStatusId = false;
+                        shopDB.Entry(slide).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                        shopDB.SaveChanges();
+                    }
+                    ViewBag.cate = "Slides";
+                    return RedirectToAction("Slide");
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         [HttpGet]
@@ -393,7 +476,7 @@ namespace ProjectPRN221.Controllers
                     ViewBag.date = String.Format("{0:dd/MM/yyyy}", DateTime.Now);
                     return View();
                 }
-                return RedirectToAction("", "");
+                return RedirectToAction("ProductHome", "Product");
             }
         }
 
@@ -401,52 +484,100 @@ namespace ProjectPRN221.Controllers
         [AutoValidateAntiforgeryToken]
         public IActionResult AddSlide(Slide slide)
         {
-            if (!ModelState.IsValid)
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return View("AddSlide");
+                return RedirectToAction("", "");
             }
-            slide.SlideStatusId = false;
-            shopDB.Slides.Add(slide);
-            shopDB.SaveChanges();
-            return RedirectToAction("Slide");
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    if (!ModelState.IsValid)
+                    {
+                        return View("AddSlide");
+                    }
+                    slide.SlideStatusId = false;
+                    shopDB.Slides.Add(slide);
+                    shopDB.SaveChanges();
+                    return RedirectToAction("Slide");
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         public IActionResult EditSlide(int Id)
         {
-            var slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
-            ViewBag.slide = slide;
-            return View();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    var slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
+                    ViewBag.slide = slide;
+                    return View();
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public IActionResult EditSlide(int SlideId,   Slide slide)
-        { 
-            if (!ModelState.IsValid)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                ViewBag.slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == SlideId);
-                return View("EditSlide");
+                return RedirectToAction("", "");
             }
-            var sl = shopDB.Slides.FirstOrDefault(x => x.SlideId == SlideId);
-            if (sl != null)
+            else
             {
-                sl.SlideTitle = slide.SlideTitle;
-                sl.SlideDescriptions = slide.SlideDescriptions;
-                sl.SlideModifyby = slide.SlideModifyby;
-                sl.SlideModifydate = slide.SlideModifydate;
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    if (!ModelState.IsValid)
+                    {
+                        ViewBag.slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == SlideId);
+                        return View("EditSlide");
+                    }
+                    var sl = shopDB.Slides.FirstOrDefault(x => x.SlideId == SlideId);
+                    if (sl != null)
+                    {
+                        sl.SlideTitle = slide.SlideTitle;
+                        sl.SlideDescriptions = slide.SlideDescriptions;
+                        sl.SlideModifyby = slide.SlideModifyby;
+                        sl.SlideModifydate = slide.SlideModifydate;
+                    }
+                    shopDB.Entry(sl).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    shopDB.SaveChanges();
+                    return RedirectToAction("Slide");
+                }
+                return RedirectToAction("ProductHome", "Product");
             }
-            shopDB.Entry(sl).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            shopDB.SaveChanges();
-            return RedirectToAction("Slide");
         }
 
         public IActionResult DeleteSlide(int Id)
         {
-            var slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
-            shopDB.Slides.Remove(slide);
-            shopDB.SaveChanges();
-            ViewBag.cate = "Slides";
-            return RedirectToAction("Slide");
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    var slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
+                    shopDB.Slides.Remove(slide);
+                    shopDB.SaveChanges();
+                    ViewBag.cate = "Slides";
+                    return RedirectToAction("Slide");
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         public IActionResult Customer(string search, int page = 1, int pageSize = 5)
@@ -471,44 +602,80 @@ namespace ProjectPRN221.Controllers
                     ViewBag.cate = "Customers";
                     return View();
                 }
-                return RedirectToAction("", "");
+                return RedirectToAction("ProductHome", "Product");
             }
         }
 
         public IActionResult UnLockAccount(int Id)
         {
-            Account acc = shopDB.Accounts.FirstOrDefault(x => x.AccountId == Id);
-            if (acc != null)
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                acc.AccountStatus = true;
-                shopDB.Entry(acc).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                shopDB.SaveChanges();
+                return RedirectToAction("", "");
             }
-            ViewBag.cate = "Customers";
-            return RedirectToAction("Customer");
+            else
+            {
+                var acc1 = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc1.AccountRoleId == 2)
+                {
+                    Account acc = shopDB.Accounts.FirstOrDefault(x => x.AccountId == Id);
+                    if (acc != null)
+                    {
+                        acc.AccountStatus = true;
+                        shopDB.Entry(acc).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                        shopDB.SaveChanges();
+                    }
+                    ViewBag.cate = "Customers";
+                    return RedirectToAction("Customer");
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         public IActionResult LockAccount(int Id)
         {
-            Account acc = shopDB.Accounts.FirstOrDefault(x => x.AccountId == Id);
-            if (acc != null)
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                acc.AccountStatus = false;
-                shopDB.Entry(acc).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                shopDB.SaveChanges();
+                return RedirectToAction("", "");
             }
-            ViewBag.cate = "Customers";
-            return RedirectToAction("Customer");
+            else
+            {
+                var acc1 = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc1.AccountRoleId == 2)
+                {
+                    Account acc = shopDB.Accounts.FirstOrDefault(x => x.AccountId == Id);
+                    if (acc != null)
+                    {
+                        acc.AccountStatus = false;
+                        shopDB.Entry(acc).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                        shopDB.SaveChanges();
+                    }
+                    ViewBag.cate = "Customers";
+                    return RedirectToAction("Customer");
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         public IActionResult ViewOrderMember(int Id)
         {
-            ViewBag.member = shopDB.Accounts.FirstOrDefault(x => x.AccountId == Id);
-            ViewBag.lstOrder = shopDB.Orders.ToList();
-            ViewBag.lstProduct = shopDB.Products.ToList();
-            ViewBag.lstOrderDetail = shopDB.OrderDetails.ToList();
-            ViewBag.lstOrderStatus = shopDB.OrderStatuses.ToList();
-            return View();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    ViewBag.member = shopDB.Accounts.FirstOrDefault(x => x.AccountId == Id);
+                    ViewBag.lstOrder = shopDB.Orders.ToList();
+                    ViewBag.lstProduct = shopDB.Products.ToList();
+                    ViewBag.lstOrderDetail = shopDB.OrderDetails.ToList();
+                    ViewBag.lstOrderStatus = shopDB.OrderStatuses.ToList();
+                    return View();
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         public IActionResult Order()
@@ -530,28 +697,52 @@ namespace ProjectPRN221.Controllers
                     ViewBag.cate = "Orders";
                     return View();
                 }
-                return RedirectToAction("", "");
+                return RedirectToAction("ProductHome", "Product");
             }
         }
 
         public IActionResult AceptOrder(int Id)
         {
-            var order = shopDB.Orders.FirstOrDefault(x => x.OrderId == Id);
-            order.OrderStatusId = 2;
-            shopDB.Entry(order).State = EntityState.Modified;
-            shopDB.SaveChanges();
-            ViewBag.cate = "Orders";
-            return RedirectToAction("Order");
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    var order = shopDB.Orders.FirstOrDefault(x => x.OrderId == Id);
+                    order.OrderStatusId = 2;
+                    shopDB.Entry(order).State = EntityState.Modified;
+                    shopDB.SaveChanges();
+                    ViewBag.cate = "Orders";
+                    return RedirectToAction("Order");
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         public IActionResult CancelledOrder(int Id)
         {
-            var order = shopDB.Orders.FirstOrDefault(x => x.OrderId == Id);
-            order.OrderStatusId = 5;
-            shopDB.Entry(order).State = EntityState.Modified;
-            shopDB.SaveChanges();
-            ViewBag.cate = "Orders";
-            return RedirectToAction("Order");
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("", "");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (acc.AccountRoleId == 2)
+                {
+                    var order = shopDB.Orders.FirstOrDefault(x => x.OrderId == Id);
+                    order.OrderStatusId = 5;
+                    shopDB.Entry(order).State = EntityState.Modified;
+                    shopDB.SaveChanges();
+                    ViewBag.cate = "Orders";
+                    return RedirectToAction("Order");
+                }
+                return RedirectToAction("ProductHome", "Product");
+            }
         }
 
         public IActionResult Complete(int Id)

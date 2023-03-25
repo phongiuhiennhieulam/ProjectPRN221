@@ -363,3 +363,11 @@ C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\ne
 C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\EditSlide.cshtml.g.cs
 C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\SummerNote.cshtml.g.cs
 C:\Users\User\Desktop\2.1\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\ViewOrderMember.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\Blog.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\BlogDetail.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ProductByCategory.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ProductByColor.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ProductDetail.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ProductHome.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\SearchProduct.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Shared\_Layout3.cshtml.g.cs

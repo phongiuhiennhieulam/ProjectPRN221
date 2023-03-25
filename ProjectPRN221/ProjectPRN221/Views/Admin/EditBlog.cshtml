@@ -75,7 +75,7 @@
                             <input asp-for="BlogBackLink" class="form-control" value="@ViewBag.blog.BlogBackLink" />
                             <span asp-validation-for="BlogBackLink" class="text-danger"></span>
                         </div>
-                        <button type="submit" class="btn btn-info">Save Blog</button>
+                        <button type="submit" class="btn btn-info" onclick="alert(confirm('Bạn có muốn tạo sửa blog?'))">Save Blog</button>
                     </div>
                 }
             </section>
