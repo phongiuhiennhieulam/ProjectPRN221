@@ -873,10 +873,12 @@ namespace ProjectPRN221.Controllers
                         account.AccountImage = img;
                     }
 
-                    account.AccountRoleId = 1;
+                    account.AccountRoleId = 2;
+                    account.AccountStatus = true;
                     shopDB.Entry(account).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     shopDB.SaveChanges();
-                    return View();
+                    HttpContext.Session.SetString("seft", "Update Account successfull!!!");
+                    return RedirectToAction("Index", "Home");
                 }
                 return RedirectToAction("ProductHome", "Product");
             }

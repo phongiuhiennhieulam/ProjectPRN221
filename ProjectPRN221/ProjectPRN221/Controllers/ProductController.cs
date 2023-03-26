@@ -39,6 +39,11 @@ namespace ProjectPRN221.Controllers
             ViewBag.listProduct = listProduct;
             ViewBag.listCategory = listCategory;
             ViewBag.listSlide = listSlide;
+            if (HttpContext.Session.GetString("account") != null)
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                ViewBag.acc = acc;
+            }
             return View();
         }
         [HttpGet]

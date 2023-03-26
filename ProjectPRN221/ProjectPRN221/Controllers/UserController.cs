@@ -210,6 +210,7 @@ namespace ProjectPRN221.Controllers
                     }
 
                     account.AccountRoleId = 1;
+                    account.AccountStatus = true;
                     shopDB.Entry(account).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     shopDB.SaveChanges();
                     return RedirectToAction("ToPay", "User");
@@ -219,6 +220,7 @@ namespace ProjectPRN221.Controllers
         }
         public IActionResult ReOrder(int Id)
         {
+            bool isExist = false;
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
                 return RedirectToAction("", "");
@@ -226,20 +228,47 @@ namespace ProjectPRN221.Controllers
             else
             {
                 var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
-                if (acc.AccountRoleId == 1)
+                var pro = shopDB.Products.FirstOrDefault(x => x.ProductId == Id);
+                foreach (var item in shopDB.CartDetails.ToList())
                 {
-                    Cart cart = new Cart
+                    if (item.ProductId == Id)
                     {
-
-                    };
-
-                    CartDetail cartDetail = new CartDetail
-                    {
-
-                    };
-                    return RedirectToAction("", "");
+                        isExist = true;
+                    }
                 }
-                return RedirectToAction("", "");
+                if (isExist == false)
+                {
+                    var c = shopDB.Carts.FirstOrDefault(x => x.AccountId == acc.AccountId);
+                    if (c == null)
+                    {
+                        Cart ca = new Cart
+                        {
+                            AccountId = acc.AccountId,
+                            CartTotol = pro.ProductPrice
+                        };
+                        shopDB.Carts.Add(ca);
+                        shopDB.SaveChanges();
+                    }
+
+                    var car = shopDB.Carts.FirstOrDefault(x => x.AccountId == acc.AccountId);
+                    CartDetail cd = new CartDetail
+                    {
+                        CartId = car.CartId,
+                        ProductId = Id,
+                        Quantity = 1,
+                        Price = pro.ProductPrice,
+                    };
+                    shopDB.CartDetails.Add(cd);
+                    shopDB.SaveChanges();
+                }
+                else
+                {
+                    var cd = shopDB.CartDetails.FirstOrDefault(x => x.ProductId == Id);
+                    cd.Quantity = cd.Quantity + 1;
+                    shopDB.Entry(cd).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    shopDB.SaveChanges();
+                }
+                return RedirectToAction("ListCart");
             }
         }
 

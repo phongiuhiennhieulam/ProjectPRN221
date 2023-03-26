@@ -10,7 +10,7 @@
         <div class="col-md-12">
             <section class="panel tasks-widget">
                 <header class="panel-heading">
-                    To Pay
+                    Cancelled
                 </header>
                 <div class="panel-body table-responsive">
                     <table class="table table-hover">
@@ -44,11 +44,11 @@
                                                     <td style="padding-top:40px">@or.OrderTotalMoney</td>
                                                     <td style="padding-top:40px">
                                                         @*Mua lại*@
-                                                        <a href="/User/Reorder?Id=@or.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
+                                                        <a href="/User/Reorder?Id=@item.ProductId" onclick="alert(confirm('Bạn có muốn mua lại sản phẩm?'))"><button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button></a>
                                                         @*Contact ADMIN*@
-                                                        <a href="/User/Contact?Id=@or.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                                        @*<a href="/User/Contact?Id=@or.OrderId"><button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></a>*@
                                                         @*Đánh giá sản phẩm*@
-                                                        <a href="/User/Commet?Id=@item.ProductId"></a>
+                                                        <a href="/Product/ProductDetail?Id=@item.ProductId">Đánh Gía</a>
                                                     </td>
                                                 </tr>
                                             }

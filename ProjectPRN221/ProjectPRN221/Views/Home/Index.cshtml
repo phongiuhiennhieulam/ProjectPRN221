@@ -105,7 +105,18 @@
                         }
                         
                     }
+
+                    @if (ViewBag.seft != null)
+                    {
+                        <div class="alert alert-success">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>Well done!</strong> @ViewBag.seft.
+                    </div>
+                    } 
                     
+
 
 
 

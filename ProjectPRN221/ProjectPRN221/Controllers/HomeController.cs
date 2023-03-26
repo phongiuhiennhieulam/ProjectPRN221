@@ -78,6 +78,11 @@ namespace ProjectPRN221.Controllers
 			ViewBag.lst = lst;
 			ViewBag.profit = profit;
 			ViewBag.cate = "Dashboard";
+			if (HttpContext.Session.GetString("seft") != null)
+			{
+				ViewBag.seft = HttpContext.Session.GetString("seft");
+				HttpContext.Session.Remove("seft");
+			}
 			return View();
 		}
 
