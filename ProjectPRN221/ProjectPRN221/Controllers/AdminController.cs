@@ -243,17 +243,17 @@ namespace ProjectPRN221.Controllers
                     if (HttpContext.Session.GetString("blog") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("blog");
-                        //HttpContext.Session.SetString("blog", null); 
+                        HttpContext.Session.Remove("blog");
                     }
                     if (HttpContext.Session.GetString("editblog") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("editblog");
-                        //HttpContext.Session.SetString("editblog", null);
+                        HttpContext.Session.Remove("editblog");
                     }
                     if (HttpContext.Session.GetString("deleblog") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("deleblog");
-                        //HttpContext.Session.SetString("deleblog", null);
+                        HttpContext.Session.Remove("deleblog");
                     }
                     ViewBag.cate = "Blogs";
                     return View();
@@ -409,6 +409,22 @@ namespace ProjectPRN221.Controllers
                     ViewBag.lstSlide = lstSlide;
                     ViewBag.lstSlideAc = lstSlideAc;
                     ViewBag.search = search;
+                    if (HttpContext.Session.GetString("slide") != null)
+                    {
+                        ViewBag.mess = HttpContext.Session.GetString("slide");
+                        HttpContext.Session.Remove("slide");
+                    }
+                    if (HttpContext.Session.GetString("ediSlide") != null)
+                    {
+                        ViewBag.mess = HttpContext.Session.GetString("ediSlide");
+                        HttpContext.Session.Remove("ediSlide");
+                    }
+                    if (HttpContext.Session.GetString("deleblog") != null)
+                    {
+                        ViewBag.mess = HttpContext.Session.GetString("delesldie");
+                        HttpContext.Session.Remove("delesldie");
+                    }
+
                     ViewBag.cate = "Slides";
                     return View();
                 }
@@ -506,6 +522,7 @@ namespace ProjectPRN221.Controllers
                     slide.SlideStatusId = false;
                     shopDB.Slides.Add(slide);
                     shopDB.SaveChanges();
+                    HttpContext.Session.SetString("slide", "Add slide successfull");
                     return RedirectToAction("Slide");
                 }
                 return RedirectToAction("ProductHome", "Product");
@@ -559,6 +576,7 @@ namespace ProjectPRN221.Controllers
                     }
                     shopDB.Entry(sl).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     shopDB.SaveChanges();
+                    HttpContext.Session.SetString("ediSlide", "Edit slide successfull");
                     return RedirectToAction("Slide");
                 }
                 return RedirectToAction("ProductHome", "Product");
@@ -580,6 +598,7 @@ namespace ProjectPRN221.Controllers
                     shopDB.Slides.Remove(slide);
                     shopDB.SaveChanges();
                     ViewBag.cate = "Slides";
+                    HttpContext.Session.SetString("delesldie", "Delete slide successfull");
                     return RedirectToAction("Slide");
                 }
                 return RedirectToAction("ProductHome", "Product");

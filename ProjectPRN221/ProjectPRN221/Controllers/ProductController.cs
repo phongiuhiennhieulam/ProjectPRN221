@@ -208,6 +208,7 @@ namespace ProjectPRN221.Controllers
 			}
         }
 
+        [HttpPost]
         public IActionResult Order(int Id)
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
@@ -216,30 +217,39 @@ namespace ProjectPRN221.Controllers
             }
             else
             {
-				var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
-				var lstCart = obj.Carts.ToList();
-                if (lstCart.Count == 0)
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                if (Id == null)
                 {
+                    ViewBag.acc = acc;
+                    ViewBag.cart = "Cart empty choose something to order";
+					return View("ListCart");
+				}
+				//var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+				var cart1 = obj.Carts.FirstOrDefault(x => x.CartId == Id);
+				if (cart1 == null)
+                {
+                    ViewBag.acc = acc;
                     ViewBag.cart = "Cart empty choose something to order";
                     return View("ListCart");
                 }
 
                 var cart = obj.Carts.FirstOrDefault(x => x.CartId == Id);
-                var cartDetail = obj.CartDetails.Include(x => x.Product).Where(x => x.CartId == Id);
+                var cartDetail = obj.CartDetails.Include(x => x.Product).Where(x => x.CartId == Id).ToList();
                 Order order = new Order
                 {
                     AccountId = acc.AccountId, 
                     OrderStatusId = 1, 
                     OrderNote = "Oke", 
                     OrderTotalMoney = (float)cart.CartTotol, 
-                    OrderDate = DateTime.Now
+                    OrderDate = DateTime.Now, 
+                    ShippingId = 1,
                 };
                 obj.Orders.Add(order);
                 obj.SaveChanges();
 
                 foreach (var item in cartDetail)
                 {
-                    var or = obj.Orders.LastOrDefault();
+                    var or = obj.Orders.OrderBy(x => x.OrderDate).LastOrDefault();
                     OrderDetail orderDetail = new OrderDetail
                     {
                         OrderId = or.OrderId,
@@ -251,8 +261,12 @@ namespace ProjectPRN221.Controllers
                     obj.OrderDetails.Add(orderDetail);
                     obj.SaveChanges();
                 }
-                
-                return View();
+
+                obj.CartDetails.RemoveRange(cartDetail);
+                obj.SaveChanges();
+                obj.Carts.Remove(cart);
+                obj.SaveChanges();
+                return RedirectToAction("ToPay", "User");
             }
         }
 

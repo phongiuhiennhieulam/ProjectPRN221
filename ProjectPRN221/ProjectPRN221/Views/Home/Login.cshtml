@@ -111,8 +111,6 @@
 								{
 									<li><a href="/Home/Login"><i class="fa fa-user"></i> Account</a></li>
 								}
-
-								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="/Product/ListCart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								@if (ViewBag.acc == null)
 								{
@@ -144,9 +142,9 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="/Product/ProductHome">Home</a></li>
 								<li class="dropdown">
-									<a href="#">Shop<i class="fa fa-angle-down"></i></a>
+									<a href="/Product/ProductHome">Shop<i class="fa fa-angle-down"></i></a>
 									<ul role="menu" class="sub-menu">
 										<li><a href="/Product/ProductHome">Products</a></li>
 										<li><a href="cart.html">Cart</a></li>
@@ -159,8 +157,6 @@
 										<li><a href="blog-single.html">Blog Single</a></li>
 									</ul>
 								</li>
-								<li><a href="404.html">404</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
 					</div>

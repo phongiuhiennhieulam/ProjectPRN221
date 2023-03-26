@@ -187,5 +187,11 @@ namespace ProjectPRN221.Controllers
 			HttpContext.Session.SetString("account", JsonConvert.SerializeObject(account));
 			return View();
 		}
+
+		public IActionResult Logout()
+		{
+			HttpContext.Session.Remove("account");
+			return RedirectToAction("ProductHome", "Product");
+		}
 	}
 }

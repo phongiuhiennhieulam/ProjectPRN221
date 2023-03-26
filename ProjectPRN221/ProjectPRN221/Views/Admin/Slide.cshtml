@@ -44,6 +44,15 @@
                 <header class="panel-heading">
                     Slide list
                 </header>
+                @if (ViewBag.mess != null)
+                {
+                    <div class="alert alert-success">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>Well done!</strong> @ViewBag.mess
+                    </div>
+                }
                 @using (Html.BeginForm("Slide", "Admin", FormMethod.Get))
                 {
                     <div class="input-group">
