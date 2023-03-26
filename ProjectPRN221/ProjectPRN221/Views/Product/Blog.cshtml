@@ -147,9 +147,11 @@
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="@Url.Action("ProductHome","Product")" class="active">Home</a></li>
-                                <li><a href="@Url.Action("Index","PageProduct")">Product All</a></li>
-                                <li class="dropdown">
-                                    <a href="@Url.Action("Index","Blog")" class="active">Blog</a>
+                            
+
+                                <li>
+                                    <a href="@Url.Action("Blog","Product")">Blog</a>
+
                                 </li>
                                 <li><a href="@Url.Action("Index","AboutUs")">About Us</a></li>
                             </ul>
@@ -273,9 +275,9 @@
                                 <div class="col-sm-3">
 
                                     <div class="video-gallery text-center">
-                                        <a href="#">
+                                        <a href="/Product/ProductDetail?Id=@item.ProductId"> 
                                             <div class="iframe-img">
-                                                <img src="~/Content/images/product-details/product/@item.ProductImage" />
+                                                <img src="~/images/product-details/product/@item.ProductImage" />
 
                                             </div>
                                             <div class="overlay-icon">

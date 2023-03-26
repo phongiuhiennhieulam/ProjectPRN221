@@ -12,22 +12,22 @@
     <meta content="1230730321091573" property="fb:app_id" />
     <meta content="A2bRexp9mTVEIAL_slgqE7-" property="fb:admins" />
     <title>Blog Single | E-Shopper</title>
-    <link href="~/Content/Blog/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/Content/Blog/css/font-awesome.min.css" rel="stylesheet">
-    <link href="~/Content/Blog/css/prettyPhoto.css" rel="stylesheet">
-    <link href="~/Content/Blog/css/price-range.css" rel="stylesheet">
-    <link href="~/Content/Blog/css/animate.css" rel="stylesheet">
-    <link href="~/Content/Blog/css/main.css" rel="stylesheet">
-    <link href="~/Content/Blog/css/responsive.css" rel="stylesheet">
+    <link href="~/Blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Blog/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Blog/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/Blog/css/price-range.css" rel="stylesheet">
+    <link href="~/Blog/css/animate.css" rel="stylesheet">
+    <link href="~/Blog/css/main.css" rel="stylesheet">
+    <link href="~/Blog/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="~/Content/images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="~/Content/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="~/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/images/ico/apple-touch-icon-57-precomposed.png">
     <style>
         @@media only screen and (max-width: 2000px) {
             .media-object {
@@ -76,28 +76,8 @@
                         <div class="logo pull-left">
                             <a href="index.html"><img src="~/images/home/logo.png" alt="" /></a>
                         </div>
-                        @*<div class="btn-group pull-right">
-                        <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                        USA
-                        <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                        <li><a href="">Canada</a></li>
-                        <li><a href="">UK</a></li>
-                        </ul>
-                        </div>
-                        <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                        DOLLAR
-                        <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                        <li><a href="">Canadian Dollar</a></li>
-                        <li><a href="">Pound</a></li>
-                        </ul>
-                        </div>
-                        </div>*@
+                       
+                       
                     </div>
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
@@ -130,7 +110,6 @@
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="@Url.Action("ProductHome","Product")" class="active">Home</a></li>
 
-                                <li><a href="@Url.Action("Index","PageProduct")">Product All</a></li>
 
 
 
@@ -255,8 +234,8 @@
                     @if (Model.relateBlog != null)
                     {
                         <div class="media commnets">
-                            <a class="pull-left" href="/BlogDetail/Index?Id=@Model.relateBlog.BlogId">
-                                <img class="media-object" src="~/Content/images/blog/@Model.relateBlog.BlogImages" alt="">
+                            <a class="pull-left" href="/Product/BlogDetail?Id=@Model.relateBlog.BlogId">
+                                <img class="media-object" src="~/images/blog/@Model.relateBlog.BlogImages" alt="">
                             </a>
                             <div class="media-body">
                                 <h4 class="media-heading">@Model.relateBlog.BlogTitle</h4>
@@ -299,7 +278,7 @@
                             <div class="col-sm-3">
 
                                 <div class="video-gallery text-center">
-                                    <a href="#">
+                                    <a href="/Product/ProductDetail?Id=@item.ProductId">
                                         <div class="iframe-img">
                                             <img src="~/images/product-details/product/@item.ProductImage" />
 

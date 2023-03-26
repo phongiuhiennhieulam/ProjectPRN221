@@ -59,7 +59,9 @@ namespace ProjectPRN221.Controllers
             var listColor = obj.Colors.ToList();
             //var listImage = objCategory..ToList();
             var listPrecomment = obj.Products.Where(m => m.CategoryId == 3).ToList();
+            var listPrecomment1 = obj.Products.Where(m => m.CategoryId == 1).ToList();
             ViewBag.listPrecomment = listPrecomment;
+            ViewBag.listPrecomment1 = listPrecomment1;
             var listP = obj.Products.ToList();
             ViewBag.ListProductByColor = listProductByColor;
             ViewBag.listCategory = listC;
@@ -75,7 +77,7 @@ namespace ProjectPRN221.Controllers
             //var objImg = obj.Image_product.Where(x => x.id == objProduct.image_id).FirstOrDefault();
             var listCategory = obj.Categories.ToList();
             var listColor = obj.Colors.ToList();
-            var listProduct = obj.Products.ToList();
+            var listProduct = obj.Products.Where(x=>x.CategoryId ==2).ToList();
             var listSize = obj.Sizes.ToList();
             ProductDetail p = new ProductDetail();
             p.objProduct = objProductbyId;
@@ -97,7 +99,8 @@ namespace ProjectPRN221.Controllers
             var lstPro = obj.Products.Where(x => x.ProductName.Contains(search)).OrderByDescending(x => x.ProductName).ToPagedList(page, pageSize);
             var lstBlog = obj.Blogs.Where(x => x.BlogTitle.Contains(search)).OrderByDescending(x => x.BlogCreatedate).ToPagedList(page, pageSize);
             var product = obj.Products.ToList();
-           
+            var listPrecomment = obj.Products.Where(m => m.CategoryId == 1).ToList();
+            ViewBag.listPrecomment = listPrecomment;
             ViewBag.lstBlog = lstBlog;
             ViewBag.lstPro = lstPro;
             ViewBag.search = search;
@@ -114,7 +117,8 @@ namespace ProjectPRN221.Controllers
             var cate = obj.Categories.ToList();
             var color = obj.Colors.ToList();
             var pro = obj.Products.Where(n=>n.CategoryId == 1).ToList();
-           
+            var listPrecomment = obj.Products.Where(m => m.CategoryId == 2).ToList();
+            ViewBag.listPrecomment = listPrecomment;
             ViewBag.blog = blog;
             ViewBag.cate = cate;
             ViewBag.color = color;
@@ -135,6 +139,8 @@ namespace ProjectPRN221.Controllers
             var pro = obj.Products.Where(n=>n.CategoryId==1).ToList();
 
             ProductDetail bg = new ProductDetail();
+            var listPrecomment = obj.Products.Where(m => m.CategoryId == 1).ToList();
+            ViewBag.listPrecomment = listPrecomment;
             bg.bg = blog;
             bg.relateBlog = relateBlog;
             ViewBag.cate = cate;
