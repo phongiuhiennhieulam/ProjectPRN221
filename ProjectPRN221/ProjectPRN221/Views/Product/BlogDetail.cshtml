@@ -82,10 +82,33 @@
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href=""><i class="fa fa-user"></i> Account</a></li>
+                                @if (ViewBag.acc != null)
+                                {
+                                    @if (ViewBag.acc.AccountRoleId == 1)
+                                    {
+                                        <li><a href="/User/ToPay"><i class="fa fa-user"></i> Account</a></li>
+                                    }
+                                    else if (ViewBag.acc.AccountRoleId == 2)
+                                    {
+                                        <li><a href="/Home/Index"><i class="fa fa-user"></i> Account</a></li>
+                                    }
 
-                                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="/Home/Login"><i class="fa fa-user"></i> Account</a></li>
+                                }
+
+                                <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
+                                <li><a href="/Product/ListCart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                                @if (ViewBag.acc == null)
+                                {
+                                    <li><a href="/Home/Login"><i class="fa fa-lock"></i>Login</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="/Home/Logout"><i class="fa fa-lock"></i>Logout</a></li>
+                                }
                             </ul>
                         </div>
                     </div>
@@ -118,7 +141,7 @@
                                     <a href="@Url.Action("Blog","Product")">Blog</a>
 
                                 </li>
-                                <li><a href="@Url.Action("Index","AboutUs")">About Us</a></li>
+                              
                             </ul>
                         </div>
                     </div>
