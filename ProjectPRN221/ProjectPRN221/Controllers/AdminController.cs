@@ -273,6 +273,7 @@ namespace ProjectPRN221.Controllers
                 var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
                 if (acc.AccountRoleId == 2)
                 {
+                    ViewBag.acc = acc;
                     ViewBag.cate = "Blogs";
                     return View();
                 }
@@ -317,6 +318,7 @@ namespace ProjectPRN221.Controllers
                 var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
                 if (acc.AccountRoleId == 2)
                 {
+                    ViewBag.acc = acc;
                     var blog = shopDB.Blogs.FirstOrDefault(x => x.BlogId == Id);
                     ViewBag.blog = blog;
                     ViewBag.cate = "Blogs";
@@ -351,6 +353,7 @@ namespace ProjectPRN221.Controllers
 
                     if (!ModelState.IsValid)
                     {
+                        ViewBag.acc = acc;
                         var bl = shopDB.Blogs.FirstOrDefault(x => x.BlogId == BlogId);
                         ViewBag.blog = bl;
                         return View("EditBlog");
@@ -358,7 +361,7 @@ namespace ProjectPRN221.Controllers
                     shopDB.Entry(blog).State = EntityState.Modified;
                     shopDB.SaveChanges();
                     HttpContext.Session.SetString("editblog", "Edit blog successfull!!!");
-                    return RedirectToAction("Bog");
+                    return RedirectToAction("Blog");
                 }
                 return RedirectToAction("ProductHome", "Product");
             }
@@ -495,6 +498,7 @@ namespace ProjectPRN221.Controllers
                 var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
                 if (acc.AccountRoleId == 2)
                 {
+                    ViewBag.acc = acc;
                     ViewBag.date = String.Format("{0:dd/MM/yyyy}", DateTime.Now);
                     return View();
                 }
@@ -517,6 +521,7 @@ namespace ProjectPRN221.Controllers
                 {
                     if (!ModelState.IsValid)
                     {
+                        ViewBag.acc = acc;
                         return View("AddSlide");
                     }
                     slide.SlideStatusId = false;
@@ -540,6 +545,7 @@ namespace ProjectPRN221.Controllers
                 var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
                 if (acc.AccountRoleId == 2)
                 {
+                    ViewBag.acc = acc;
                     var slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == Id);
                     ViewBag.slide = slide;
                     return View();
@@ -563,6 +569,7 @@ namespace ProjectPRN221.Controllers
                 {
                     if (!ModelState.IsValid)
                     {
+                        ViewBag.acc = acc;
                         ViewBag.slide = shopDB.Slides.FirstOrDefault(x => x.SlideId == SlideId);
                         return View("EditSlide");
                     }
