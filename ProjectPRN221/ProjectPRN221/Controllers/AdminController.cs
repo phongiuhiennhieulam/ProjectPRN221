@@ -405,7 +405,6 @@ namespace ProjectPRN221.Controllers
                     if (search != null)
                     {
                         lstSlide = lstSlide.Where(x => x.SlideTitle.ToLower().Contains(search.ToLower())).ToList().ToPagedList(page, pageSize);
-                        //lstSlideAc = lstSlideAc.Where(x => x.SlideTitle.ToLower().Contains(search.ToLower())).ToList().ToPagedList(page, pageSize);
                     }
                     lstSlide = lstSlide.OrderByDescending(x => x.SlideCreatedate).ToList().ToPagedList(page, pageSize);
 
@@ -747,6 +746,12 @@ namespace ProjectPRN221.Controllers
                 {
                     if (!ModelState.IsValid)
                     {
+                        return View("AddCustomer");
+                    }
+                    var a = shopDB.Accounts.FirstOrDefault(x => x.AccountEmail == account.AccountEmail);
+                    if(a != null)
+                    {
+                        ViewBag.mess = "Email is already exist!!!";
                         return View("AddCustomer");
                     }
                     account.AccountStatus = true;

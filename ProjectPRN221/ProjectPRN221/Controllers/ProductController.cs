@@ -204,8 +204,12 @@ namespace ProjectPRN221.Controllers
                     obj.SaveChanges();
 				} else
                 {
+                    var product = obj.Products.FirstOrDefault(x => x.ProductId == Id);
                     var cd = obj.CartDetails.FirstOrDefault(x => x.ProductId == Id);
-                    cd.Quantity = cd.Quantity + 1;
+                    if (product.ProductQuantity > cd.Quantity)
+                    {
+                        cd.Quantity = cd.Quantity + 1;
+                    }
                     obj.Entry(cd).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     obj.SaveChanges();
                 }
@@ -255,16 +259,29 @@ namespace ProjectPRN221.Controllers
                 foreach (var item in cartDetail)
                 {
                     var or = obj.Orders.OrderBy(x => x.OrderDate).LastOrDefault();
-                    OrderDetail orderDetail = new OrderDetail
+                    foreach (var i in obj.Products.ToList()) 
                     {
-                        OrderId = or.OrderId,
-                        ProductId = item.ProductId,
-                        OrderDetailsPrice = item.Product.ProductPrice, 
-                        OrderDetailsNum = item.Quantity, 
-                        OrderDetailsTotalNumber = item.Quantity
-                    };
-                    obj.OrderDetails.Add(orderDetail);
-                    obj.SaveChanges();
+                        if (i.ProductId == item.ProductId)
+                        {
+                            if (i.ProductQuantity >= item.Quantity)
+                            {
+                                OrderDetail orderDetail = new OrderDetail
+                                {
+                                    OrderId = or.OrderId,
+                                    ProductId = item.ProductId,
+                                    OrderDetailsPrice = item.Product.ProductPrice,
+                                    OrderDetailsNum = item.Quantity,
+                                    OrderDetailsTotalNumber = item.Quantity
+                                };
+                                obj.OrderDetails.Add(orderDetail);
+                                obj.SaveChanges();
+                                i.ProductQuantity = i.ProductQuantity - item.Quantity;
+                                obj.Entry(i).State = EntityState.Modified;
+                                obj.SaveChanges();
+                            } 
+                        }
+                    }
+                    
                 }
 
                 obj.CartDetails.RemoveRange(cartDetail);
@@ -308,6 +325,32 @@ namespace ProjectPRN221.Controllers
                 obj.SaveChanges();
                 return RedirectToAction("ListCart");
             }
+        }
+
+        public IActionResult Up(int Id, int Qu)
+        {
+            var product = obj.Products.FirstOrDefault(x => x.ProductId == Id);
+            var cd = obj.CartDetails.FirstOrDefault(x => x.ProductId == Id);
+            if (product.ProductQuantity > cd.Quantity)
+            {
+                cd.Quantity = cd.Quantity + 1;
+            }
+            obj.Entry(cd).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            obj.SaveChanges();
+            return RedirectToAction("ListCart");
+        }
+
+        public IActionResult Down(int Id, int Qu)
+        {
+            var product = obj.Products.FirstOrDefault(x => x.ProductId == Id);
+            var cd = obj.CartDetails.FirstOrDefault(x => x.ProductId == Id);
+            if (cd.Quantity > 1)
+            {
+                cd.Quantity = cd.Quantity - 1;
+            } 
+            obj.Entry(cd).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            obj.SaveChanges();
+            return RedirectToAction("ListCart");
         }
 
     }

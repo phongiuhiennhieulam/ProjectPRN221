@@ -92,6 +92,15 @@
                 <header class="panel-heading">
                     Add New Customer
                 </header>
+                @if (ViewBag.mess != null)
+                {
+                    <div class="alert alert-warning">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>Warning!</strong> @ViewBag.mess
+                    </div>
+                }
                 @using (Html.BeginForm("AddCustomer", "Admin", FormMethod.Post))
                 {
                     @Html.AntiForgeryToken()
@@ -157,7 +166,7 @@
                             <input asp-for="AccountDob" class="form-control" />
                             <span asp-validation-for="AccountDob" class="text-danger"></span>
                         </div>
-                        <button type="submit" class="btn btn-info" onclick="alert(confirm('Bạn có muốn tạo mới người dùng?'))">Add Blog</button>
+                        <button type="submit" class="btn btn-info" onclick="alert(confirm('Bạn có muốn tạo mới người dùng?'))">Add New Customer</button>
                     </div>
                 }
             </section>

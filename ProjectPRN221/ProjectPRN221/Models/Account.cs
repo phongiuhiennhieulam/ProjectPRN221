@@ -27,9 +27,9 @@ namespace ProjectPRN221.Models
 		[StringLength(20, MinimumLength = 8, ErrorMessage = "Password should be between 8 and 20 characters")]
 		public string AccountPassword { get; set; }
 
-		[Required(ErrorMessage = "Email is not empty")]
-		[StringLength(20, MinimumLength = 8, ErrorMessage = "Password should be between 8 and 20 characters")]
-		public string AccountEmail { get; set; }
+        [Required(ErrorMessage = "Field can't be empty")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "E-mail is not valid")]
+        public string AccountEmail { get; set; }
 
 		[Required(ErrorMessage = "AccountName is not empty ")]
 		public string AccountName { get; set; }

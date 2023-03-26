@@ -257,7 +257,7 @@
                                                     <td class="cart_product">
                                                         <a href=""><img class="media-object" src="~/images/product-details/product/@i.ProductImage" alt=""></a>
                                                     </td>
-                                                    <td class="cart_description">
+                                                    <td class="cart_description" style="padding-left: 30px">
                                                         <h4><a href="">@i.ProductName</a></h4>
                                                         <p>Web ID: @i.ProductCode</p>
                                                     </td>
@@ -266,9 +266,9 @@
                                                     </td>
                                                     <td class="cart_quantity">
                                                         <div class="cart_quantity_button">
-                                                            @*<a class="cart_quantity_up" href="/Product/Up?Id="> + </a>*@
-                                                            <input type="number" class="cart_quantity_input" style="width: 35px" name="quantity" value="1" autocomplete="off" size="2">
-                                                            @*<a class="cart_quantity_down" href="/Product/Down?Id="> - </a>*@
+                                                            <a class="cart_quantity_up" href="/Product/Up?Id=@i.ProductId&Qu=@item.Quantity"> + </a>
+                                                            <input class="cart_quantity_input" name="quantity" value="@item.Quantity" autocomplete="off" size="2">
+                                                            <a class="cart_quantity_down" href="/Product/Down?Id=@i.ProductId&Qu=@item.Quantity"> - </a>
                                                         </div>
                                                     </td>
                                                     <td class="cart_total">

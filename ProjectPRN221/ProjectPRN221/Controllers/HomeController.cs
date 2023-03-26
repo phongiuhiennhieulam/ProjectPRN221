@@ -178,6 +178,13 @@ namespace ProjectPRN221.Controllers
 				return View("Login");
 			}
 
+			var a = shopDB.Accounts.FirstOrDefault(x => x.AccountEmail == email);
+			if (a != null)
+			{
+                ViewBag.re = "Email already exist!!!";
+                return View("Login");
+			}
+
 			Account account = new Account
 			{
 				AccountUsername = fullname,
