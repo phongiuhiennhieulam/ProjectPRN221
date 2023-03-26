@@ -21,7 +21,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -39,7 +39,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -84,7 +84,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -110,7 +110,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -141,7 +141,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -168,7 +168,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -201,7 +201,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -225,7 +225,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -265,7 +265,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -285,7 +285,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -309,7 +309,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -331,7 +331,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -367,7 +367,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -389,7 +389,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -419,7 +419,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -445,7 +445,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -471,7 +471,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -491,7 +491,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -515,7 +515,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -536,7 +536,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -568,7 +568,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -589,7 +589,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -620,7 +620,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -645,7 +645,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -670,7 +670,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -692,7 +692,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -711,7 +711,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -737,7 +737,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -760,7 +760,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -782,7 +782,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -814,7 +814,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {
@@ -834,7 +834,7 @@ namespace ProjectPRN221.Controllers
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
             {
-                return RedirectToAction("", "");
+                return RedirectToAction("Login", "Home");
             }
             else
             {

@@ -186,3 +186,5 @@ E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\o
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\AddCustomer.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Admin\SeftAccount.cshtml.g.cs
 E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\User\SeftAccount.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
+E:\Visual Studio 2019\Project_PRN221\ProjectPRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net5.0\Razor\Views\Product\ListCart.cshtml.g.cs

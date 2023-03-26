@@ -1,8 +1,6 @@
 ﻿using System;
-using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
 #nullable disable
 
@@ -43,12 +41,10 @@ namespace ProjectPRN221.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var builder = new ConfigurationBuilder()
-                           .SetBasePath(Directory.GetCurrentDirectory())
-                           .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-
-            IConfigurationRoot configuration = builder.Build();
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("ShopDB"));
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("server =(locaL); database = Project_SU23;uid=sa;pwd=sa;");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -171,9 +167,7 @@ namespace ProjectPRN221.Models
             {
                 entity.ToTable("Cart");
 
-                entity.Property(e => e.CartId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("cart_id");
+                entity.Property(e => e.CartId).HasColumnName("cart_id");
 
                 entity.Property(e => e.AccountId).HasColumnName("account_id");
 
@@ -190,13 +184,11 @@ namespace ProjectPRN221.Models
 
             modelBuilder.Entity<CartDetail>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("CartDetail");
 
-                entity.Property(e => e.CartId).HasColumnName("cart_id");
-
                 entity.Property(e => e.CartdetailId).HasColumnName("cartdetail_id");
+
+                entity.Property(e => e.CartId).HasColumnName("cart_id");
 
                 entity.Property(e => e.Price)
                     .HasColumnType("money")
@@ -207,13 +199,13 @@ namespace ProjectPRN221.Models
                 entity.Property(e => e.Quantity).HasColumnName("quantity");
 
                 entity.HasOne(d => d.Cart)
-                    .WithMany()
+                    .WithMany(p => p.CartDetails)
                     .HasForeignKey(d => d.CartId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CartDetail_Cart");
 
                 entity.HasOne(d => d.Product)
-                    .WithMany()
+                    .WithMany(p => p.CartDetails)
                     .HasForeignKey(d => d.ProductId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CartDetail_product");
@@ -374,7 +366,7 @@ namespace ProjectPRN221.Models
             modelBuilder.Entity<OrderDetail>(entity =>
             {
                 entity.HasKey(e => e.OrderDetailsId)
-                    .HasName("PK__Order_De__F68B9B8A50993982");
+                    .HasName("PK__Order_De__F68B9B8A2D5ABD3A");
 
                 entity.ToTable("Order_Details");
 

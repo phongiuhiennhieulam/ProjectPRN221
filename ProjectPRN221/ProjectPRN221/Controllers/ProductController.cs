@@ -4,6 +4,13 @@ using System.Linq;
 using System;
 using X.PagedList;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Net.WebSockets;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ProjectPRN221.Controllers
 {
@@ -148,5 +155,139 @@ namespace ProjectPRN221.Controllers
             ViewBag.ListProducts = pro;
             return View(bg);
         }
+
+        public IActionResult AddToCart(int Id)
+        {
+            bool isExist = false;
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                var pro = obj.Products.FirstOrDefault(x => x.ProductId == Id);
+                foreach (var item in obj.CartDetails.ToList()) 
+                {
+                    if (item.ProductId == Id)
+                    {
+                        isExist = true;
+                    }
+                }
+                if (isExist == false)
+                {
+                    var c = obj.Carts.FirstOrDefault(x => x.AccountId == acc.AccountId);
+                    if (c == null) {
+						Cart ca = new Cart
+						{
+							AccountId = acc.AccountId,
+							CartTotol = pro.ProductPrice
+						};
+						obj.Carts.Add(ca);
+						obj.SaveChanges();
+					}
+
+                    var car = obj.Carts.FirstOrDefault(x => x.AccountId == acc.AccountId);
+					CartDetail cd = new CartDetail
+					{
+						CartId = car.CartId,
+						ProductId = Id,
+						Quantity = 1,
+						Price = pro.ProductPrice,
+					};
+				} else
+                {
+                    var cd = obj.CartDetails.FirstOrDefault(x => x.ProductId == Id);
+                    cd.Quantity = cd.Quantity + 1;
+                    obj.Entry(cd).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    obj.SaveChanges();
+                }
+                return RedirectToAction("ListCart");
+			}
+        }
+
+        public IActionResult Order(int Id)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            else
+            {
+				var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+				var lstCart = obj.Carts.ToList();
+                if (lstCart.Count == 0)
+                {
+                    ViewBag.cart = "Cart empty choose something to order";
+                    return View("ListCart");
+                }
+
+                var cart = obj.Carts.FirstOrDefault(x => x.CartId == Id);
+                var cartDetail = obj.CartDetails.Include(x => x.Product).Where(x => x.CartId == Id);
+                Order order = new Order
+                {
+                    AccountId = acc.AccountId, 
+                    OrderStatusId = 1, 
+                    OrderNote = "Oke", 
+                    OrderTotalMoney = (float)cart.CartTotol, 
+                    OrderDate = DateTime.Now
+                };
+                obj.Orders.Add(order);
+                obj.SaveChanges();
+
+                foreach (var item in cartDetail)
+                {
+                    var or = obj.Orders.LastOrDefault();
+                    OrderDetail orderDetail = new OrderDetail
+                    {
+                        OrderId = or.OrderId,
+                        ProductId = item.ProductId,
+                        OrderDetailsPrice = item.Product.ProductPrice, 
+                        OrderDetailsNum = item.Quantity, 
+                        OrderDetailsTotalNumber = item.Quantity
+                    };
+                    obj.OrderDetails.Add(orderDetail);
+                    obj.SaveChanges();
+                }
+                
+                return View();
+            }
+        }
+
+        public IActionResult ListCart()
+        {
+            //bool isExist = false;
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            else
+            {
+                var acc = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+                var lst = obj.Carts.FirstOrDefault(x => x.AccountId == acc.AccountId);
+                var lstCart = obj.CartDetails.ToList();
+                ViewBag.lstProduct = obj.Products.ToList();
+                ViewBag.lstCart = lstCart;
+                ViewBag.lst = lst;
+                ViewBag.acc = acc;
+                return View();
+            }
+        }
+
+        public IActionResult DeleteCart(int PId, int CId)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("account")))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            else
+            {
+                var lstCartOrder = obj.CartDetails.FirstOrDefault(x => x.ProductId == PId && x.CartId == CId);
+                obj.CartDetails.Remove(lstCartOrder);
+                obj.SaveChanges();
+                return RedirectToAction("ListCart");
+            }
+        }
+
     }
 }
