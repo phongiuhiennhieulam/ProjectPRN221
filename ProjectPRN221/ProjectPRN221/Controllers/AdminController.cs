@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using X.PagedList;
+using static System.Collections.Specialized.BitVector32;
 
 namespace ProjectPRN221.Controllers
 {
@@ -61,17 +62,17 @@ namespace ProjectPRN221.Controllers
                     if (HttpContext.Session.GetString("product") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("product");
-                        HttpContext.Session.SetString("product", null);
+                        HttpContext.Session.Remove("product");
                     }
                     if (HttpContext.Session.GetString("editpro") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("editpro");
-                        HttpContext.Session.SetString("editpro", null);
+                        HttpContext.Session.Remove("editpro");
                     }
                     if (HttpContext.Session.GetString("delepro") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("delepro");
-                        HttpContext.Session.SetString("delepro", null);
+                        HttpContext.Session.Remove("delepro");
                     }
                     return View();
                 }
@@ -242,17 +243,17 @@ namespace ProjectPRN221.Controllers
                     if (HttpContext.Session.GetString("blog") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("blog");
-                        HttpContext.Session.SetString("blog", null); 
+                        //HttpContext.Session.SetString("blog", null); 
                     }
                     if (HttpContext.Session.GetString("editblog") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("editblog");
-                        HttpContext.Session.SetString("editblog", null);
+                        //HttpContext.Session.SetString("editblog", null);
                     }
                     if (HttpContext.Session.GetString("deleblog") != null)
                     {
                         ViewBag.mess = HttpContext.Session.GetString("deleblog");
-                        HttpContext.Session.SetString("deleblog", null);
+                        //HttpContext.Session.SetString("deleblog", null);
                     }
                     ViewBag.cate = "Blogs";
                     return View();

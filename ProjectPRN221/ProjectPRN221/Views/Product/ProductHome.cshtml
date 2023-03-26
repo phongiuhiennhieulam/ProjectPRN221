@@ -112,8 +112,9 @@
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                @*<li><a href="/UserAdmin/Index"><i class="fa fa-user"></i> Account</a></li>*@
-                                <li><a href="~/Cart/Index"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+
+                                <li><a href="/UserAdmin/Index"><i class="fa fa-user"></i> Account</a></li>
+                                <li><a href="~/Product/ListCart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                                 @if (User.Identity.IsAuthenticated)
                                 {
                                         <li><a href="/UserAdmin/Index"><i class="fa fa-user"></i> Account</a></li>
@@ -331,13 +332,13 @@
                                             <h2>@item.ProductPrice</h2>
                                             <a href="/Product/ProductDetail?Id=@item.ProductId"> <p> @item.ProductName </p></a>
 @*                                            <p><h2>@Html.ActionLink(item.ProductName, "ProductHome", "Product", new { id = item.ProductId }, new { @style = "font-family: 'nunito', sans-serif ; font-size: 16px ; color:black" href="javascript:void(0)" })</h2></p>
-*@                                                <a href="@*/Cart/AddItem?productId=@item.product_id&quantity=1*@" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+*@                                                <a href="/Product/AddToCart?ID=@item.ProductId" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
                                             <div class="product-overlay">
                                                 <div class="overlay-content">
                                                     <h2>@item.ProductPrice</h2>
                                                      <h2>  <a href="/Product/ProductDetail?Id=@item.ProductId"> <p> @item.ProductName </p></a></h2>
-                                                    <a href="@*/Cart/AddItem?productId=@item.product_id&quantity=1*@" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                <a href="/Product/AddToCart?ID=@item.ProductId" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>

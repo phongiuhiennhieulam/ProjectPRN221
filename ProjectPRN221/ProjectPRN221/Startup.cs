@@ -28,7 +28,7 @@ namespace ProjectPRN221
 
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromSeconds(100);
+                options.IdleTimeout = TimeSpan.FromSeconds(10000);
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
@@ -59,7 +59,7 @@ namespace ProjectPRN221
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Login}/{id?}");
+                    pattern: "{controller=Product}/{action=ProductHome}/{id?}");
             });
         }
     }

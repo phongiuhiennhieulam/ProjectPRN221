@@ -152,7 +152,7 @@ namespace ProjectPRN221.Controllers
 				if (account.AccountRoleId == 1)
 				{
 					HttpContext.Session.SetString("account", JsonConvert.SerializeObject(account));
-					return RedirectToAction("ListCart", "Product");
+					return RedirectToAction("ProductHome", "Product");
 				}
 				if (account.AccountRoleId == 2)
 				{

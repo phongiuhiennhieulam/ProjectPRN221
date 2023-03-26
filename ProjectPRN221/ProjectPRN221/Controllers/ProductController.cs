@@ -195,6 +195,8 @@ namespace ProjectPRN221.Controllers
 						Quantity = 1,
 						Price = pro.ProductPrice,
 					};
+                    obj.CartDetails.Add(cd);
+                    obj.SaveChanges();
 				} else
                 {
                     var cd = obj.CartDetails.FirstOrDefault(x => x.ProductId == Id);
