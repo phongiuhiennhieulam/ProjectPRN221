@@ -16,6 +16,7 @@ namespace ProjectPRN221.Controllers
         Project_SU23Context shopDB = new Project_SU23Context();
         public List<Earning> lstEarning = new List<Earning>();
         public List<Product> lstProduct = new List<Product>();
+        public List<Order> lstOrderTody = new List<Order>();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -47,7 +48,16 @@ namespace ProjectPRN221.Controllers
                 profit += item.OrderTotalMoney;
             }
 
-            ViewBag.orderToday = shopDB.Orders.Where(x => string.Format("{0:dd/MM/yyyy}", x.OrderDate).Equals(string.Format("{0:dd/MM/yyyy}", DateTime.Now))).ToList();
+            foreach (var item in shopDB.Orders.ToList())
+            {
+                string a = string.Format("{0:dd/MM/yyyy}", item.OrderDate);
+                string now = string.Format("{0:dd/MM/yyyy}", DateTime.Now);
+                if (a == now)
+                {
+                    lstOrderTody.Add(item);
+                }
+            }
+            ViewBag.orderToday = lstOrderTody;
 
             var lst = shopDB.Products.ToList();
             foreach (var item in lst)
@@ -75,14 +85,19 @@ namespace ProjectPRN221.Controllers
             {
                 foreach (var item in shopDB.Orders.ToList())
                 {
-                    string[] date = convert(string.Format("{0:dd/MM/yyyy}", item.OrderDate));
-                    string[] now = convert(string.Format("{0:dd/MM/yyyy}", DateTime.Now));
-                    if (int.Parse(date[1]) == i && date[2] == now[2])
+                    if (item.OrderDate == null)
                     {
-                        count++;
-                        profits += item.OrderTotalMoney;
-                    }
-                    
+                        continue;
+                    } else
+                    {
+                        string[] date = convert(string.Format("{0:dd/MM/yyyy}", item.OrderDate));
+                        string[] now = convert(string.Format("{0:dd/MM/yyyy}", DateTime.Now));
+                        if (int.Parse(date[1]) == i && date[2] == now[2])
+                        {
+                            count++;
+                            profits += item.OrderTotalMoney;
+                        }
+                    }       
                 }
                 lstEarning.Add(new Earning(i, count, profits));
                 count++;
@@ -93,8 +108,8 @@ namespace ProjectPRN221.Controllers
 
         public string[] convert(string a)
         {
-            int y = a.IndexOf(' ');
-            string[] b = a.Substring(0, y).Split('/');
+            //int y = a.IndexOf(' ');
+            string[] b = a.Split('/');
             return b;
         }
     }
