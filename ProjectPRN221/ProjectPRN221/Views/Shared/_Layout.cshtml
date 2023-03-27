@@ -507,9 +507,6 @@
         $(function () {
             "use strict";
             //BAR CHART
-            const endpoint = 'https://localhost:44364/Home/GetEarning';
-            fetch(endpoint)
-                .then((response) => console.log(response));
             
             var data = {
                 labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -522,7 +519,7 @@
                         pointStrokeColor: "#fff",
                         pointHighlightFill: "#fff",
                         pointHighlightStroke: "rgba(220,220,220,1)",
-                        data: [a1, a2, 80, 81, 56, 55, 40]
+                        data: [2,1,1]
                     },
                     {
                         label: "My Second dataset",
@@ -532,7 +529,7 @@
                         pointStrokeColor: "#fff",
                         pointHighlightFill: "#fff",
                         pointHighlightStroke: "rgba(151,187,205,1)",
-                        data: [28, 48, 40, 19, 86, 27, 100]
+                        data: [3200, 1600, 1800]
                     }
                 ]
             };

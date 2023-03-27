@@ -432,8 +432,62 @@
         $(function () {
             "use strict";
             //BAR CHART
+            var a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12;
+            var b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12;
+            $.ajax({
+                url: '/Products/GetProducts',
+                method: 'GET',
+                success: (result) => {
+                    $.each(result, (k, v) => {
+                    a1 = result[0].totalOrder,
+                    b1 = result[0].profit,
+
+                    a2 = result[1].totalOrder,
+                    b2 = result[1].profit,
+
+                    a3 = result[2].totalOrder,
+                    b3 = result[2].profit,
+
+                    a4 = result[3].totalOrder,
+                    b4 = result[3].profit,
+
+                    a5 = result[4].totalOrder,
+                    b5 = result[4].profit,
+
+                    a6 = result[5].totalOrder,
+                    b6 = result[5].profit,
+
+                    a7 = result[6].totalOrder,
+                    b7 = result[6].profit,
+
+                    a8 = result[7].totalOrder,
+                    b8 = result[7].profit,
+
+                    a9 = result[8].totalOrder,
+                    b9 = result[8].profit,
+
+                    a10 = result[9].totalOrder,
+                    b10 = result[9].profit,
+
+                    a11 = result[10].totalOrder,
+                    b11 = result[10].profit,
+
+                    a12 = result[11].totalOrder,
+                    b12 = result[11].profit,
+
+                    })
+                    
+                },
+                error: (error) => {
+                    console.log(error)
+                }
+            });
+            2200, 
+            160,
+            0
+
             var data = {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 datasets: [
                     {
                         label: "My First dataset",
@@ -443,7 +497,7 @@
                         pointStrokeColor: "#fff",
                         pointHighlightFill: "#fff",
                         pointHighlightStroke: "rgba(220,220,220,1)",
-                        data: [65, 59, 80, 81, 56, 55, 40]
+                        data: [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12]
                     },
                     {
                         label: "My Second dataset",
